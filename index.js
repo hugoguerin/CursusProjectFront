@@ -1,12 +1,17 @@
 const board = [
-    [0, 0, 0, 0, 0],
-    [0, 0, 2, 0, 0], 
-    [0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 3, 0],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+    [2, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+    [2, 0, 2, 2, 0, 0, 2, 2, 0, 2],
+    [2, 0, 2, 0, 0, 0, 0, 2, 0, 2],
+    [2, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+    [2, 0, 0, 0, 3, 0, 0, 0, 0, 2],
+    [2, 0, 2, 0, 0, 0, 0, 2, 0, 2],
+    [2, 0, 2, 2, 0, 0, 2, 2, 0, 2],
+    [2, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
 ];
 
-// 0= case vide -- 1 = case occupée -- 2 = mur -- 3= joueur
+// 0= case vide -- 1 = case occupée par un adversaire -- 2 = mur -- 3= joueur
 
 
 
@@ -50,7 +55,20 @@ function createBoard() {
         const tr = document.createElement("tr");
         for (let y = 0; y < board[x].length; y++) {
             const td = document.createElement("td");
-            td.innerHTML = board[x][y];
+            // td.innerHTML = board[x][y]; 
+            if (board[x][y] == 0) {
+                td.style.backgroundColor = "antiquewhite";
+            }  
+            if (board[x][y] == 1) {
+                td.style.backgroundColor = "red";
+            }  
+            if (board[x][y] == 2) {
+                td.style.backgroundColor = "maroon";
+            }  
+            if (board[x][y] == 3) {
+                td.style.backgroundColor = "green";
+            }  
+
             // td.dataset.x = x;
             // td.dataset.y = y;
             td.addEventListener("click", function (event) {

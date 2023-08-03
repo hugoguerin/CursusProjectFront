@@ -1,13 +1,69 @@
+body{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 td{
     height: 70px;
     width: 70px;
     border-style: solid;
     text-align: center;
-    
 }
 
 td:hover{
     border-style: solid;
     border-color: red;
+}
+
+.empty{
+    background-color: antiquewhite;
+}
+
+.empty:after{
+    /* content: "EMPTY" */
+}
+
+.enemy{
+    background-color: orange;
+    font-size: 13px;
+}
+
+.enemy:after{
+    content: "OBSTACLE"
+}
+
+
+.wall{
+    background-color: rgb(41, 43, 44);
+    
+}
+
+.wall:after{
+    /* content: "WALL"; */
+    color: white;
+}
+
+.player{
+    background-color: rgb(40, 40, 131);
+    font-size: 16px;
+}
+
+.player:after{
+    content: "PLAYER";
+    color: white;
+}
+
+.goal{
+    background-color: lightgreen;
+
+}
+
+.goal:after{
+    content: "GOAL";
+}
+
+.hidden{
+    display: none;
 }

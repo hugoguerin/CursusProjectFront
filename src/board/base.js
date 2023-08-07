@@ -27,7 +27,7 @@ export const board = [
         { type: Type.Wall, entity: Entity.None },
         { type: Type.Empty, entity: Entity.None },
         { type: Type.Empty, entity: Entity.None },
-        { type: Type.Empty, entity: Entity.None },
+        { type: Type.Empty, entity: Entity.Enemy },
         { type: Type.Empty, entity: Entity.None },
         { type: Type.Empty, entity: Entity.None },
         { type: Type.Empty, entity: Entity.None },

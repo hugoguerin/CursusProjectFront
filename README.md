@@ -1,2 +1,1 @@
-# Panda
-Projet Panda
+# Projet Jeu de plateau

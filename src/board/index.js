@@ -108,6 +108,8 @@ function updateTile (tile, playerHtml) {
     tile.htmlElement.className = "";
     tile.htmlElement.classList.add(tile.type);
 
+    // z
+
 
     // Si la case de type GOAL à comme Entity PLAYER
     const GoalPosition = getTypePosition(board, 'goal');

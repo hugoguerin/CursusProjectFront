@@ -350,10 +350,3 @@ document.addEventListener('click', () => {
 //! SI LA CASE GOAL A LE JOUEUR COMME ENTITE, LA PARTIE EST TERMINEE
 
 
-// const boardsize = boardHtml.style.height
-// console.log(boardsize);
-
-let ok = document.querySelector('#okok')
-console.log(boardHtml.offsetWidth);
-
-console.log(boardHtml);

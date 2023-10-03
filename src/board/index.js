@@ -6,6 +6,38 @@ let playerPosition = getEntityPosition(board, Entity.Player);
 const playerHtml = document.createElement("div");
 playerHtml.classList.add(Entity.Player);
 
+//! Création variable PM + intégration en html
+
+let PM = 5;
+
+let PMHtml = document.createElement('div');
+PMHtml.setAttribute('id','PM');
+PMHtml.innerText = PM;
+
+document.body.appendChild(PMHtml);
+
+console.log(board);
+//! BOUTON RETRY
+
+let initialPM = PM;
+let initialBoard = board;
+
+
+let retryButton = document.createElement('button');
+retryButton.setAttribute('type','button');
+retryButton.innerText = 'retry';
+document.body.appendChild(retryButton);
+
+retryButton.addEventListener('click', () => {
+    PM = initialPM;
+    PMHtml.innerText = PM;
+    boardHtml.innerHTML = '';
+    createBoard()
+})
+
+
+
+
 
 //! ------------ RECUPERER POSITION D'UNE ENTITE ------------
 
@@ -20,7 +52,18 @@ function getEntityPosition(array, entity) {
     }
 }
 
+//! ------------ RECUPERER POSITION D'UN TYPE DE CASE ------------
 
+function getTypePosition(array, type) {
+    // parcourir le tableau puis return la position du joueur quand trouvé
+    for (let x = 0; x < array.length; x++) {
+        for (let y = 0; y < array[x].length; y++) {
+            if (array[x][y].type == type) {
+                return { x: x, y: y };
+            }
+        }
+    }
+}
 
 //! ------------ TELEPORTE SUR CASE VIDE PEU IMPORTE DISTANCE ------------
 /**
@@ -64,6 +107,18 @@ function updateTile (tile, playerHtml) {
 
     tile.htmlElement.className = "";
     tile.htmlElement.classList.add(tile.type);
+
+
+    // Si la case de type GOAL à comme Entity PLAYER
+    const GoalPosition = getTypePosition(board, 'goal');
+    if (board[GoalPosition.x][GoalPosition.y].entity == 'player') {
+        console.log('coucou');
+        let victory = document.createElement('div');
+        victory.classList.add('victory');
+        victory.innerText = 'GG';
+        document.body.appendChild(victory);
+
+    }
 
     if(tile.htmlElement.firstChild){
         tile.htmlElement.removeChild(tile.htmlElement.firstChild);
@@ -122,7 +177,7 @@ export function createBoard() {
 
             td.addEventListener("click", function (event) {
                 // playerPosition = teleport(board, playerPosition, { x: x, y: y }, playerHtml);
-                playerPosition = walk(board, playerPosition, { x: x, y: y }, 3, playerHtml);
+                playerPosition = walk(board, playerPosition, { x: x, y: y }, PM, playerHtml);
             });
 
             tr.appendChild(td);
@@ -135,6 +190,8 @@ export function createBoard() {
 
 //! ------------ TROUVER LES CASES ATTEIGANBLES AVEC X PM ------------
 
+
+//TODO EMPECHER DE PUSH LES MEMES POSITIONS AVEC COUT EN PM DIFFERENT
 /**
  * 
  * @param {*} array 
@@ -165,8 +222,8 @@ function findAllReachableCells(array, maxMovements, position) {
         }
     
         if (!reachableCells.has(`${x},${y}`)) {
-            reachableCells.add(`${x},${y}`);
-
+            reachableCells.add(`${x},${y},${movements}`);
+           
             for (const [dx, dy] of directions) {
 
                 const newX = x + dx;
@@ -195,10 +252,34 @@ function findAllReachableCells(array, maxMovements, position) {
 function walk(array, playerPosition, desiredPosition, maxMovements, playerHtml) {
 
     const reachableCells = findAllReachableCells(array, maxMovements, playerPosition);
-    const desiredPositionString = `${desiredPosition.x},${desiredPosition.y}`;
-    
+    const reachableCellsArrayofOfObjects = Array.from(reachableCells).map(string => {
+        const object = string.split(',');
+        return {
+            x:object[0],
+            y:object[1],
+            z:object[2]
+        }
+    })
 
-    if (reachableCells.has(desiredPositionString)) { 
+    //? Set de strings sans le PM??? Pq j'ai fais ça si j'ai justement besoin du pm?
+    // const reachableCellsWithoutPM = new Set(Array.from(reachableCells).map(string => {
+    //     let array = string.split(',');
+    //     return `${array[0]},${array[1]}`;
+    // }))
+
+    let desiredInReachable = false;
+
+    desiredInReachable = reachableCellsArrayofOfObjects.some(object => {
+        return object.x == desiredPosition.x && object.y == desiredPosition.y;
+    });
+
+    let indexOfTarget = reachableCellsArrayofOfObjects.findIndex((object) => {
+        return object.x == desiredPosition.x && object.y == desiredPosition.y;
+    });
+
+    let pmCost = reachableCellsArrayofOfObjects[indexOfTarget].z;
+
+    if (desiredInReachable) { 
         // Player position
         const currentPlayer = array[playerPosition.x][playerPosition.y];
 
@@ -213,7 +294,11 @@ function walk(array, playerPosition, desiredPosition, maxMovements, playerHtml) 
         
         updateTile(desired, playerHtml);
 
+        PM -= pmCost;
+        PMHtml.innerText = PM;
+
         return { x: desiredPosition.x, y: desiredPosition.y };
+
     }
     return { x: playerPosition.x, y: playerPosition.y };
 }
@@ -229,21 +314,16 @@ playerHtml.addEventListener('click', () => {
 })
 
 document.addEventListener('click', () => {
-
-    console.log('playerClicked',playerClicked);
-    console.log('deplacementDisplayed',deplacementDisplayed);
-    console.log('if',playerClicked && !deplacementDisplayed);
-    console.log('---------');
-      
+   
     if (playerClicked && !deplacementDisplayed) {
-        const reachableCells = findAllReachableCells(board, 3, playerPosition);
+        const reachableCells = findAllReachableCells(board, PM, playerPosition);
         const reachablePositions = Array.from(reachableCells).map(posString => {
             const posArray = posString.split(',');
             return {
                 x:posArray[0],
-                y:posArray[1]
+                y:posArray[1],
             }
-        })      
+        }) 
         for (let i = 0; i < reachablePositions.length; i++) {
             const selected =  board[reachablePositions[i].x][reachablePositions[i].y].htmlElement;
             selected.classList.add('deplacement');
@@ -264,3 +344,14 @@ document.addEventListener('click', () => {
     playerClicked = false;
     
 })
+
+//! SI LA CASE GOAL A LE JOUEUR COMME ENTITE, LA PARTIE EST TERMINEE
+
+
+// const boardsize = boardHtml.style.height
+// console.log(boardsize);
+
+let ok = document.querySelector('#okok')
+console.log(boardHtml.offsetWidth);
+
+console.log(boardHtml);

@@ -1,0 +1,57 @@
+body{
+    height: 98vh;
+    background-color: #171d20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    
+}
+
+#navbar{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center; 
+}
+
+h1{
+    text-align: center;
+    font-family: alagard;
+    font-size: 50px;
+    color: #f4f3ee;
+    font-weight: 100;
+}
+
+img{ 
+    width: 375px;
+}
+
+#jouer{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    height: 70px;
+    width: 180px;
+    background-color: #8c271e;
+    font-family: alagard;
+    color: #f4f3ee;
+    font-size: 40px;
+    border-color: #f4f3ee;
+    border-radius: 5%;
+}
+
+#editeur, #quitter, #encyclopedie{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    height: 50px;
+    width: 140px;
+    background-color: #171d20;
+    font-family: alagard;
+    color: #f4f3ee;
+    font-size: 22px;
+    border-color: #f4f3ee;
+    border-radius: 5%;
+}

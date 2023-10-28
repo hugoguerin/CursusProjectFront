@@ -1,0 +1,22 @@
+{
+  "name": "projet",
+  "version": "0.0.1",
+  "description": "Projet Panda",
+  "main": "src/main.js",
+  "scripts": {
+    "backend": "json-server --watch backend/database.json --port=8001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugoguerin/Projet.git"
+  },
+  "author": "Hugo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugoguerin/Projet/issues"
+  },
+  "homepage": "https://github.com/hugoguerin/Projet#readme",
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}

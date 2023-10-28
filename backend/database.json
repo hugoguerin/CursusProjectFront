@@ -1,0 +1,257 @@
+{
+    "levels": [
+        {
+            "id": 1,
+            "name": "MAP 1",
+            "pm": 5,
+            "spells": [1,3],
+            "board": [
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "player"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "enemy"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "enemy"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "enemy"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "enemy"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "goal",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ]
+            ]
+        }
+    ],
+    "spells":[
+        {
+            "id": 1,
+            "name": "COLERE DU IOP",
+            "action": null
+        },
+        {
+            "id": 2,
+            "name": "COLERE DU ECAFLIP",
+            "action": null
+        },
+        {
+            "id": 3,
+            "name": "COLERE DU XELOR",
+            "action": null
+        }
+    ]
+}

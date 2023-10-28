@@ -1,39 +1,38 @@
 import { Entity, Type } from "../constants/index.js";
-import { board } from "./base.js";
 
 const boardHtml = document.querySelector("#board");
-let playerPosition = getEntityPosition(board, Entity.Player);
-const playerHtml = document.createElement("div");
-playerHtml.classList.add(Entity.Player);
-
-//! Création variable PM + intégration en html
-
-let PM = 5;
-
-let PMHtml = document.createElement('div');
-PMHtml.setAttribute('id','PM');
-PMHtml.innerText = PM;
-
-document.body.appendChild(PMHtml);
-
-console.log(board);
-//! BOUTON RETRY
-
-let initialPM = PM;
-let initialBoard = board;
+let playerPosition = null;
 
 
-let retryButton = document.createElement('button');
-retryButton.setAttribute('type','button');
-retryButton.innerText = 'retry';
-document.body.appendChild(retryButton);
+//! Création variable PM + intégration en html'
 
-retryButton.addEventListener('click', () => {
-    PM = initialPM;
-    PMHtml.innerText = PM;
-    boardHtml.innerHTML = '';
-    createBoard()
-})
+let PM = 0;
+
+// let PMHtml = document.createElement('div');
+// PMHtml.setAttribute('id','PM');
+// PMHtml.innerText = PM;
+
+// document.body.appendChild(PMHtml);
+
+// console.log(board);
+
+// //! BOUTON RETRY
+
+// let initialPM = PM;
+// let initialBoard = board;
+
+
+// let retryButton = document.createElement('button');
+// retryButton.setAttribute('type','button');
+// retryButton.innerText = 'retry';
+// document.body.appendChild(retryButton);
+
+// retryButton.addEventListener('click', () => {
+//     PM = initialPM;
+//     PMHtml.innerText = PM;
+//     boardHtml.innerHTML = '';
+//     createBoard()
+// })
 
 
 
@@ -108,19 +107,6 @@ function updateTile (tile, playerHtml) {
     tile.htmlElement.className = "";
     tile.htmlElement.classList.add(tile.type);
 
-    // z
-
-
-    // Si la case de type GOAL à comme Entity PLAYER
-    const GoalPosition = getTypePosition(board, 'goal');
-    if (board[GoalPosition.x][GoalPosition.y].entity == 'player') {
-        console.log('coucou');
-        let victory = document.createElement('div');
-        victory.classList.add('victory');
-        victory.innerText = 'GG';
-        document.body.appendChild(victory);
-
-    }
 
     if(tile.htmlElement.firstChild){
         tile.htmlElement.removeChild(tile.htmlElement.firstChild);
@@ -163,9 +149,10 @@ function updateTile (tile, playerHtml) {
 //     element.removeEventListener('mouseover', handleMovements);
 // }
 
-//! ------------ CREATION ET MAJ DU BOARD ------------
+//! ------------ CREATE BOARD ------------
 
-export function createBoard() {    
+export function createBoard(board) {   
+    
     const body = document.createElement("tbody");
 
     for (let x = 0; x < board.length; x++) {
@@ -173,20 +160,33 @@ export function createBoard() {
         for (let y = 0; y < board[x].length; y++) {
             const current = board[x][y];
             const td = document.createElement("td");   
+            //Rajoute la clé htmlElement aux objets du tableau ET leurs donnent leurs VUE html
             current.htmlElement = td;
         
-            updateTile(current, playerHtml);
+            
 
-            td.addEventListener("click", function (event) {
-                // playerPosition = teleport(board, playerPosition, { x: x, y: y }, playerHtml);
-                playerPosition = walk(board, playerPosition, { x: x, y: y }, PM, playerHtml);
-            });
+            // td.addEventListener("click", function (event) {
+            //     playerPosition = teleport(board, playerPosition, { x: x, y: y }, playerHtml);
+            //     playerPosition = walk(board, playerPosition, { x: x, y: y }, PM, playerHtml);
+            // });
 
             tr.appendChild(td);
         }
         body.appendChild(tr);
     }
     boardHtml.appendChild(body);
+}
+
+
+//! ------------UPDATE BOARD ------------
+
+export function updateBoard(board, playerHtml){
+
+    for (let x = 0; x < board.length; x++) {
+        for (let y = 0; y < board[x].length; y++) {
+            updateTile(board[x][y], playerHtml);
+        }    
+    }
 }
 
 
@@ -297,7 +297,7 @@ function walk(array, playerPosition, desiredPosition, maxMovements, playerHtml) 
         updateTile(desired, playerHtml);
 
         PM -= pmCost;
-        PMHtml.innerText = PM;
+        // PMHtml.innerText = PM;
 
         return { x: desiredPosition.x, y: desiredPosition.y };
 
@@ -307,46 +307,46 @@ function walk(array, playerPosition, desiredPosition, maxMovements, playerHtml) 
 
 //! ------------ AFFICHAGE DES CASES ATTEIGNABLES ------------
 
-let playerClicked = false;
-let deplacementDisplayed = false;
 
-
-playerHtml.addEventListener('click', () => {
-    playerClicked = true;
-})
-
-document.addEventListener('click', () => {
-   
-    if (playerClicked && !deplacementDisplayed) {
-        const reachableCells = findAllReachableCells(board, PM, playerPosition);
-        const reachablePositions = Array.from(reachableCells).map(posString => {
-            const posArray = posString.split(',');
-            return {
-                x:posArray[0],
-                y:posArray[1],
-            }
-        }) 
-        for (let i = 0; i < reachablePositions.length; i++) {
-            const selected =  board[reachablePositions[i].x][reachablePositions[i].y].htmlElement;
-            selected.classList.add('deplacement');
-        }
-        deplacementDisplayed = true;
-    } else {
-        
-        const alltds = Array.from(document.querySelectorAll('.deplacement'));
-        for (let i = 0; i < alltds.length; i++) {
-            // if ( alltds[i].classList.contains('deplacement')) {
-            alltds[i].classList.remove('deplacement');   
-            // }
-        }    
-        deplacementDisplayed = false; 
-            
-    }
-
-    playerClicked = false;
+ export function initBoard() {
     
-})
-
-//! SI LA CASE GOAL A LE JOUEUR COMME ENTITE, LA PARTIE EST TERMINEE
-
-
+    let playerClicked = false;
+    let deplacementDisplayed = false;
+    
+    
+    playerHtml.addEventListener('click', () => {
+        playerClicked = true;
+    })
+    
+    document.addEventListener('click', () => {
+       
+        if (playerClicked && !deplacementDisplayed) {
+            const reachableCells = findAllReachableCells(board, PM, playerPosition);
+            const reachablePositions = Array.from(reachableCells).map(posString => {
+                const posArray = posString.split(',');
+                return {
+                    x:posArray[0],
+                    y:posArray[1],
+                }
+            }) 
+            for (let i = 0; i < reachablePositions.length; i++) {
+                const selected =  board[reachablePositions[i].x][reachablePositions[i].y].htmlElement;
+                selected.classList.add('deplacement');
+            }
+            deplacementDisplayed = true;
+        } else {
+            
+            const alltds = Array.from(document.querySelectorAll('.deplacement'));
+            for (let i = 0; i < alltds.length; i++) {
+                // if ( alltds[i].classList.contains('deplacement')) {
+                alltds[i].classList.remove('deplacement');   
+                // }
+            }    
+            deplacementDisplayed = false; 
+                
+        }
+    
+        playerClicked = false;
+        
+    })
+}

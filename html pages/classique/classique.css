@@ -1,0 +1,78 @@
+body{
+    height: 95vh;
+    background-color: #171d20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+#h1{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+}
+
+h1{
+    font-family: alagard;
+    font-size: 2.5em;
+    color: #f4f3ee;
+    font-weight: 100;   
+}
+
+#container{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.level{
+    width: 60px;
+    height: 60px;
+    font-family: alagard;
+    font-size: 30px;
+    border-color: #f4f3ee;
+    border-radius: 5%;
+    color: #f4f3ee;
+    background-color: #171d20;
+    margin: 10px;
+}
+
+#retourmenu{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#retourmenubtn{
+    margin-top: 20px;
+    font-family: alagard;
+    border-color: #f4f3ee;
+    border-radius: 5%;
+    color: #f4f3ee;
+    height: 50px;
+    width: 140px;
+    background-color: #8c271e;
+    font-size: 22px;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+

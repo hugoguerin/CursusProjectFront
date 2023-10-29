@@ -3,18 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Home</title>
     <link rel="stylesheet" href="accueil.css">
+    <script src="accueil.js" async></script>
 </head>
 <body>
-    <h1>Eerie Night</h1>
-    <div #img><img src="../../img/149-1495615_cthulhu-cthulhu-pixel-art-removebg-preview-removebg-preview.png" alt="ctu"></div>
+
+    <div id="h1">
+        <h1>Eerie Night</h1>
+    </div>
+
+    <div id="img">
+        <img src="../../img/149-1495615_cthulhu-cthulhu-pixel-art-removebg-preview-removebg-preview.png" alt="ctu">
+    </div>
 
     <div id="navbar">
-        <button id="jouer" type="button">Jouer</button>
-        <button id="editeur" type="button">Editeur</button>
-        <button id="encyclopedie" type="button">Encyclopedie</button>
-        <button id="quitter" type="button">Quitter</button>
+        <button id="jouer" type="button">Play</button>
+        <button id="editeur" type="button">Editor</button>
+        <!-- <button id="encyclopedie" type="button">Encyclopedie</button> -->
+        <!-- <button id="quitter" type="button">Quitter</button> -->
+    </div>
+
+
+    <div id="choixmoderetourmenu" class="hidden">
+        <div id="choixmode" >
+            <button id="classique" type="button">Classic</button>
+            <button id="communaute" type="button">Community</button>
+        </div>
+    
+        <div id="retourmenu" >
+            <button id="retourmenubtn" type="button">Back</button>
+        </div>
     </div>
 
 

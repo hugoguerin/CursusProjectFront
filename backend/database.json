@@ -235,23 +235,259 @@
                     }
                 ]
             ]
+        },
+        {
+            "id": 2,
+            "name": "MAP 2",
+            "pm": 4,
+            "spells": [2,3],
+            "board": [
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "player"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "enemy"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "enemy"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "enemy"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "enemy"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "empty",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "goal",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ],
+                [
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    },
+                    {
+                        "type": "wall",
+                        "entity": "none"
+                    }
+                ]
+            ]
         }
     ],
     "spells":[
         {
             "id": 1,
-            "name": "COLERE DU IOP",
-            "action": null
+            "name": "BOND",
+            "range": 4
         },
         {
             "id": 2,
             "name": "COLERE DU ECAFLIP",
-            "action": null
+            "range": 3
         },
         {
             "id": 3,
-            "name": "COLERE DU XELOR",
-            "action": null
+            "name": "TELEPORTATION DU XELOR",
+            "range": 5
         }
     ]
 }

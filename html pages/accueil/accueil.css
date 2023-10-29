@@ -1,57 +1,101 @@
 body{
-    height: 98vh;
+    height: 95vh;
     background-color: #171d20;
     display: flex;
     flex-direction: column;
-    align-items: center;   
-    
+    align-items: center;    
 }
 
-#navbar{
-    height: 50vh;
+
+#h1{
+    height: 20%;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center; 
+    align-items: center;
+    justify-content: center;
 }
 
 h1{
-    text-align: center;
     font-family: alagard;
     font-size: 50px;
     color: #f4f3ee;
     font-weight: 100;
 }
 
-img{ 
-    width: 375px;
+#img{ 
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    height: 100%;
+}
+
+#navbar{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button{
+    font-family: alagard;
+    border-color: #f4f3ee;
+    border-radius: 5%;
+    color: #f4f3ee;
 }
 
 #jouer{
-    display: flex;
-    align-items: center;
-    justify-content: center;  
+  
     height: 70px;
     width: 180px;
     background-color: #8c271e;
-    font-family: alagard;
-    color: #f4f3ee;
     font-size: 40px;
-    border-color: #f4f3ee;
-    border-radius: 5%;
 }
 
-#editeur, #quitter, #encyclopedie{
-    display: flex;
-    align-items: center;
-    justify-content: center;  
+#editeur, #quitter, #encyclopedie, #classique, #communaute, #retourmenubtn{
+
     height: 50px;
     width: 140px;
     background-color: #171d20;
-    font-family: alagard;
-    color: #f4f3ee;
     font-size: 22px;
-    border-color: #f4f3ee;
-    border-radius: 5%;
+}
+
+#retourmenubtn{
+    background-color: #8c271e;
+}
+
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.hidden{
+    display: none !important;
+}
+
+#choixmode{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#choixmoderetourmenu{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#classique, #communaute{
+    margin-left: 20px;
+    margin-right: 20px;
 }

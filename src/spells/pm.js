@@ -1,6 +1,5 @@
-//!
-//! NONE SORTED
-//!
+import { updateTile } from "../board/index.js";
+import { Entity, Type } from "../constants/index.js";
 
 
 //! ------------ TROUVER LES CASES ATTEIGANBLES AVEC X PM ------------
@@ -24,21 +23,22 @@ function findAllReachableCells(array, maxMovements, position) {
         [0, 1],  // Right
     ];
   
-    const reachableCells = new Set();
+    const reachableCells = [];
+    const processedCells = [];
     const queue = [[position.x, position.y, 0]];
-  
+
     while (queue.length > 0) {
-
+       
         const [x, y, movements] = queue.shift();
-
         
         if (movements > maxMovements) {
             continue; // Skip cells that require more movements than allowed
         }
     
-        if (!reachableCells.has(`${x},${y}`)) {
-            reachableCells.add(`${x},${y},${movements}`);
-           
+        if (!processedCells.includes(`${x},${y}`)) {
+            processedCells.push(`${x},${y}`);
+            reachableCells.push(`${x},${y},${movements}`);
+    
             for (const [dx, dy] of directions) {
 
                 const newX = x + dx;
@@ -50,6 +50,10 @@ function findAllReachableCells(array, maxMovements, position) {
                     newX < rows &&
                     newY >= 0 &&
                     newY < cols &&
+
+                    // Que la case ne soit pas dans processedCells
+                    !processedCells.includes(`${newX},${newY}`) &&
+                    
                     // Et que la case est libre
                     array[newX][newY].type !== Type.Wall &&
                     array[newX][newY].entity == Entity.None
@@ -65,10 +69,21 @@ function findAllReachableCells(array, maxMovements, position) {
 
 //! ------------ TELEPORTE AVEC CONTRAINTE PM & OBSTACLE------------
 
-export function walk(array, playerPosition, desiredPosition, maxMovements, playerHtml) {
+
+/**
+ * 
+ * @param {*} array 
+ * @param {*} playerPosition 
+ * @param {*} desiredPosition 
+ * @param {*} maxMovements 
+ * @param {*} playerHtml 
+ * @returns nouvelle position du player
+ */
+export function walk(array, playerPosition, desiredPosition, maxMovements, updatePlayerPm, playerHtml) {
 
     const reachableCells = findAllReachableCells(array, maxMovements, playerPosition);
-    const reachableCellsArrayofOfObjects = Array.from(reachableCells).map(string => {
+
+    const reachableCellsArray = reachableCells.map(string => {
         const object = string.split(',');
         return {
             x:object[0],
@@ -77,24 +92,23 @@ export function walk(array, playerPosition, desiredPosition, maxMovements, playe
         }
     })
 
-    let desiredInReachable = false;
-
-    desiredInReachable = reachableCellsArrayofOfObjects.some(object => {
+    let desiredInReachable = reachableCellsArray.some(object => {
         return object.x == desiredPosition.x && object.y == desiredPosition.y;
     });
-
-    let indexOfTarget = reachableCellsArrayofOfObjects.findIndex((object) => {
-        return object.x == desiredPosition.x && object.y == desiredPosition.y;
-    });
-
-    let pmCost = reachableCellsArrayofOfObjects[indexOfTarget].z;
-
+    
     if (desiredInReachable) { 
+
+        let indexOfTarget = reachableCellsArray.findIndex((object) => {
+            return object.x == desiredPosition.x && object.y == desiredPosition.y;
+        });
+    
+        let pmCost = reachableCellsArray[indexOfTarget].z;
+
         // Player position
         const currentPlayer = array[playerPosition.x][playerPosition.y];
 
         currentPlayer.entity = Entity.None;
-        
+    
         updateTile(currentPlayer, playerHtml);
 
         // Desired position
@@ -104,9 +118,8 @@ export function walk(array, playerPosition, desiredPosition, maxMovements, playe
         
         updateTile(desired, playerHtml);
 
-        PM -= pmCost;
-        // PMHtml.innerText = PM;
-
+        updatePlayerPm(maxMovements - pmCost);
+        
         return { x: desiredPosition.x, y: desiredPosition.y };
 
     }

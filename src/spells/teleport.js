@@ -1,35 +1,41 @@
 import { updateTile } from "../board/index.js";
 import { Entity } from "../constants/index.js";
-import { canMove } from "./index.js";
+import { canMove, isInRange } from "./index.js";
 
 
 //! ------------ TELEPORTE SUR CASE VIDE PEU IMPORTE DISTANCE ------------
 /**
  * 
- * @param {*} array 
+ * @param {*} board 
  * @param {*} playerPosition 
  * @param {*} desiredPosition 
  * @param {*} playerHtml 
+ * @param {*} action 
  * @returns nouvelle position du player
  */
-export function teleport(array, playerPosition, desiredPosition, playerHtml) {
-    // si la case est vide -> le joueur prend la position sinon ciao bye
-    if (canMove(array, desiredPosition)) { 
-        // Player position
-        const currentPlayer = array[playerPosition.x][playerPosition.y];
+export function teleport(board, playerPosition, desiredPosition, playerHtml, action) {
 
-        currentPlayer.entity = Entity.None;
-        
-        updateTile(currentPlayer, playerHtml);
+    const inRange = isInRange(action.range, playerPosition, desiredPosition);
+    const move = canMove(board, desiredPosition)
 
-        // Desired position
-        const desired = array[desiredPosition.x][desiredPosition.y];
-
-        desired.entity = Entity.Player;  
-        
-        updateTile(desired, playerHtml);
-
-        return { x: desiredPosition.x, y: desiredPosition.y };
+    if (!inRange || !move) {
+        return { x: playerPosition.x, y: playerPosition.y };
     }
-    return { x: playerPosition.x, y: playerPosition.y };
+
+    // Player position
+    const currentPlayer = board[playerPosition.x][playerPosition.y];
+
+    currentPlayer.entity = Entity.None;
+
+    updateTile(currentPlayer, playerHtml);
+
+    // Desired position
+    const desired = board[desiredPosition.x][desiredPosition.y];
+
+    desired.entity = Entity.Player;  
+
+    updateTile(desired, playerHtml);
+
+    return { x: desiredPosition.x, y: desiredPosition.y };
+
 }

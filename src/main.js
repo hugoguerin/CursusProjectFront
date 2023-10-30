@@ -37,13 +37,14 @@ const playerHtml = document.createElement("div");
 playerHtml.classList.add(Entity.Player);
 
 //? ----------- PM -----------
-function updatePm(pm) {
-    //TODO WHEN WALK FINISHED
+function updatePlayerPm(pm) {
+    playerPm = pm;
+    playerPmHtml.innerText = `pm: ${playerPm}`;
 }
 
-let pm = level.pm;
-const pmHtml = document.getElementById("pm");
-pmHtml.innerText = `pm: ${pm}`;
+let playerPm = level.pm;
+const playerPmHtml = document.getElementById("playerPm");
+updatePlayerPm(playerPm);
 
 //? ----------- ACTION -----------
 function updateAction(spellId) {
@@ -66,7 +67,8 @@ function updateTargetPos(pos) {
         playerHtml,
         targetPos,
         action,
-        pm
+        playerPm,
+        updatePlayerPm
     );
     updateAction(null);
 }

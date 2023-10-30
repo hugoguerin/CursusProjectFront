@@ -1,11 +1,8 @@
-// import { walk } from "./pm";
-
 import { Entity, Type } from "../constants/index.js";
+import { walk } from "./pm.js";
 import { teleport } from "./teleport.js";
 
 function createSpell(spell, updateAction) {
-
-    // let spellsHtml = document.getElementById("spells");
 
     let spellHtml = document.createElement("div");
     let spellImg = document.createElement("img");
@@ -42,15 +39,17 @@ export function doAction(
     playerHtml,
     targetPos,
     action,
-    pm
+    playerPm,
+    updatePlayerPm
 ) {
     if (targetPos == null) return;
 
     if (action == null) {
-        // walk();
-        console.log("walk");
+        const newPlayerPos = walk(board, playerPos, targetPos, playerPm, updatePlayerPm, playerHtml);
+        updatePlayerPos(newPlayerPos);
         return;
-    } 
+    }
+
 
     switch (action.id) {
         case 1: 
@@ -64,7 +63,7 @@ export function doAction(
         case 3:
             //TODO RANGE
             console.log(action.name);
-            const newPlayerPos = teleport(board, playerPos, targetPos, playerHtml);
+            const newPlayerPos = teleport(board, playerPos, targetPos, playerHtml, action);
             updatePlayerPos(newPlayerPos);
             break;
 
@@ -88,6 +87,23 @@ export function getEntityPos(array, entity) {
     }
 }
 
+//! ------------ VERIF CASE VIDE ------------
+
+export function canMove(array, position) {
+    const selected = array[position.x][position.y];
+    return selected.type != Type.Wall && selected.entity == Entity.None;
+}
+
+//! ------------ VERIF IF IN RANGE ------------
+
+export function isInRange(range, posA, posB){
+    const realRange =  Math.abs(posA.x - posB.x) + Math.abs(posA.y - posB.y);
+  
+    return realRange <= range;
+}
+
+
+
 
 //!
 //! NONE SORTED
@@ -108,10 +124,4 @@ function getTypePosition(array, type) {
     }
 }
 
-//! ------------ VERIF CASE VIDE ------------
-
-export function canMove(array, position) {
-    const selected = array[position.x][position.y];
-    return selected.type != Type.Wall && selected.entity == Entity.None;
-}
 

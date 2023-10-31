@@ -1,5 +1,6 @@
 import { Entity, Type } from "../constants/index.js";
 import { walk } from "./pm.js";
+import { pushEnemy } from "./push.js";
 import { teleport } from "./teleport.js";
 
 function createSpell(spell, updateAction) {
@@ -58,6 +59,7 @@ export function doAction(
     
         case 2:
             console.log(action.name);
+            pushEnemy(board,playerPos,playerHtml,targetPos,action);
             break;
 
         case 3:

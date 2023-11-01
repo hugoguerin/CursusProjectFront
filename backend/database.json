@@ -473,21 +473,27 @@
             ]
         }
     ],
-    "spells":[
+    "spells": [
         {
             "id": 1,
-            "name": "BOND",
-            "range": 4
+            "name": "tbd",
+            "range": 4,
+            "aligned": false,
+            "entity": "none"
         },
         {
             "id": 2,
-            "name": "COLERE DU ECAFLIP",
-            "range": 3
+            "name": "Push 1",
+            "range": 3,
+            "aligned": true,
+            "entity": "enemy"
         },
         {
             "id": 3,
-            "name": "TELEPORTATION DU XELOR",
-            "range": 5
+            "name": "Bond 5",
+            "range": 5,
+            "aligned": false,
+            "entity": "none"
         }
     ]
 }

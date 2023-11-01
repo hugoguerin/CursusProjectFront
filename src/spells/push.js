@@ -4,7 +4,9 @@ import { Entity, Type } from "../constants/index.js";
 //TODO RANGE OF SPELL USING action.range && ALLOW TO PUSH ON GOAL TILE? && ADD KEY IN DB FOR THE PUSH DISTANCE
 export function pushEnemy(board, playerPos, playerHtml, targetPos, action) {
 
-    if (board[targetPos.x][targetPos.y].entity != Entity.Enemy){
+    const enemyPos = board[targetPos.x][targetPos.y];
+
+    if (enemyPos.entity != Entity.Enemy) {
         console.log("Not an enemy");
         return;
     }
@@ -16,35 +18,37 @@ export function pushEnemy(board, playerPos, playerHtml, targetPos, action) {
     if (!isAligned) {
         console.log("Not aligned");
         return;
-    } 
+    }
+
+    const directionX = playerPos.x - targetPos.x;
+    const directionY = playerPos.y - targetPos.y;
+    
+    let behindEnemy;
 
     if (isAlignedX) {
-        let direction = playerPos.y - targetPos.y;
-        console.log(board[targetPos.x][targetPos.y+1].entity);
-        if (direction < 0 && board[targetPos.x][targetPos.y+1].entity == Entity.None && board[targetPos.x][targetPos.y+1].type == Type.Empty) {
-            console.log("Push to the right");
-            board[targetPos.x][targetPos.y].entity = Entity.None;
-            board[targetPos.x][targetPos.y+1].entity = Entity.Enemy;
-            updateBoard(board, playerHtml);
-        } else if (direction > 0 && board[targetPos.x][targetPos.y-1].entity == Entity.None && board[targetPos.x][targetPos.y-1].type == Type.Empty ) {
-            console.log("Push to the left");
-            board[targetPos.x][targetPos.y].entity = Entity.None;
-            board[targetPos.x][targetPos.y-1].entity = Entity.Enemy;
-            updateBoard(board, playerHtml);
+        if (directionY < 0) {
+           behindEnemy = board[targetPos.x][targetPos.y + 1];
+           console.log("Push to the right");
+        } else {
+           behindEnemy = board[targetPos.x][targetPos.y - 1];
+           console.log("Push to the left");
         }
-    } else if (isAlignedY) {
-        let direction = playerPos.x - targetPos.x;
-        if (direction < 0 && board[targetPos.x+1][targetPos.y].entity == Entity.None && board[targetPos.x+1][targetPos.y].type == Type.Empty) {
-            console.log("Push to the bot");
-            board[targetPos.x][targetPos.y].entity = Entity.None;
-            board[targetPos.x+1][targetPos.y].entity = Entity.Enemy;
-            updateBoard(board, playerHtml);
-        } else if (direction > 0 && board[targetPos.x-1][targetPos.y].entity == Entity.None && board[targetPos.x-1][targetPos.y].type == Type.Empty ) {
+    } else {
+        if (directionX < 0) {
+            behindEnemy = board[targetPos.x + 1][targetPos.y];     
+            console.log("Push to the bottom");
+        } else {
+            behindEnemy = board[targetPos.x - 1][targetPos.y];
             console.log("Push to the top");
-            board[targetPos.x][targetPos.y].entity = Entity.None;
-            board[targetPos.x-1][targetPos.y].entity = Entity.Enemy;
-            updateBoard(board, playerHtml);
         }
     }
-    return;
+
+    if (behindEnemy.entity == Entity.None &&
+        behindEnemy.type != Type.Goal &&
+        behindEnemy.type != Type.Wall
+    ) {
+        enemyPos.entity = Entity.None;
+        behindEnemy.entity = Entity.Enemy;
+        updateBoard(board, playerHtml);
+    }
 }

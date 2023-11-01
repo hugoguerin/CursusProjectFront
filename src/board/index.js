@@ -33,6 +33,7 @@ export function createBoard(board, updateTargetPos) {
     boardHtml.appendChild(body);
 }
 
+//TODO MODIFY TO UPDATE ONLY NECESSARY TILES
 //! ------------ UPDATE BOARD ------------
 
 export function updateBoard(board, playerHtml){

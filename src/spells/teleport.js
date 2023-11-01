@@ -1,4 +1,4 @@
-import { updateTile } from "../board/index.js";
+import { updateBoard, updateTile } from "../board/index.js";
 import { Entity } from "../constants/index.js";
 import { canMove, isInRange } from "./index.js";
 
@@ -27,14 +27,17 @@ export function teleport(board, playerPosition, desiredPosition, playerHtml, act
 
     currentPlayer.entity = Entity.None;
 
-    updateTile(currentPlayer, playerHtml);
+    // updateTile(currentPlayer, playerHtml);
+    updateBoard(board, playerHtml);
 
     // Desired position
     const desired = board[desiredPosition.x][desiredPosition.y];
 
     desired.entity = Entity.Player;  
 
-    updateTile(desired, playerHtml);
+
+    // updateTile(desired, playerHtml);
+    updateBoard(board, playerHtml);
 
     return { x: desiredPosition.x, y: desiredPosition.y };
 

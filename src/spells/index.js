@@ -51,6 +51,9 @@ export function doAction(
         return;
     }
 
+    if (!isInRange(action.range, playerPos, targetPos)) return;
+    if (!canTarget(board, targetPos, action.entity)) return;
+    if (action.aligned && !isAligned(playerPos,targetPos)) return;
 
     switch (action.id) {
         case 1: 
@@ -63,9 +66,8 @@ export function doAction(
             break;
 
         case 3:
-            //TODO RANGE
             console.log(action.name);
-            const newPlayerPos = teleport(board, playerPos, targetPos, playerHtml, action);
+            const newPlayerPos = teleport(board, playerPos, targetPos, playerHtml);
             updatePlayerPos(newPlayerPos);
             break;
 
@@ -89,41 +91,25 @@ export function getEntityPos(array, entity) {
     }
 }
 
-//! ------------ VERIF CASE VIDE ------------
+//! ------------ VERIF TARGET ENTITY ------------
 
-export function canMove(array, position) {
-    const selected = array[position.x][position.y];
-    return selected.type != Type.Wall && selected.entity == Entity.None;
+function canTarget(board, targetPos, entity) {
+    const target = board[targetPos.x][targetPos.y];
+    return target.type != Type.Wall && target.entity == entity;
 }
 
 //! ------------ VERIF IF IN RANGE ------------
 
-export function isInRange(range, posA, posB){
+function isInRange(range, posA, posB){
     const realRange =  Math.abs(posA.x - posB.x) + Math.abs(posA.y - posB.y);
   
     return realRange <= range;
 }
 
+//! ------------ VERIF IF ALIGNED ------------
 
-
-
-//!
-//! NONE SORTED
-//!
-
-
-
-//! ------------ RECUPERER POSITION D'UN TYPE DE CASE ------------
-
-function getTypePosition(array, type) {
-    // parcourir le tableau puis return la position du joueur quand trouvé
-    for (let x = 0; x < array.length; x++) {
-        for (let y = 0; y < array[x].length; y++) {
-            if (array[x][y].type == type) {
-                return { x: x, y: y };
-            }
-        }
-    }
+function isAligned(playerPos, targetPos) {
+    const isAlignedX = playerPos.x == targetPos.x;
+    const isAlignedY = playerPos.y == targetPos.y;
+    return isAlignedX || isAlignedY;  
 }
-
-

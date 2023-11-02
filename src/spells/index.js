@@ -1,4 +1,4 @@
-import { Entity, Type } from "../constants/index.js";
+import { Type } from "../constants/index.js";
 import { walk } from "./pm.js";
 import { pushEnemy } from "./push.js";
 import { teleport } from "./teleport.js";
@@ -12,7 +12,7 @@ function createSpell(spell, updateAction) {
     spellImg.alt = spell.name;
     spellHtml.addEventListener('click', function(event) {
         updateAction(spell)
-    })
+    });
 
     spellHtml.appendChild(spellImg);
 
@@ -43,6 +43,8 @@ export function doAction(
     playerPm,
     updatePlayerPm
 ) {
+    
+
     if (targetPos == null) return;
 
     if (action == null) {
@@ -53,7 +55,7 @@ export function doAction(
 
     if (!isInRange(action.range, playerPos, targetPos)) return;
     if (!canTarget(board, targetPos, action.entity)) return;
-    if (action.aligned && !isAligned(playerPos,targetPos)) return;
+    if (action.aligned && !isAligned(playerPos, targetPos)) return;
 
     switch (action.id) {
         case 1: 
@@ -80,11 +82,11 @@ export function doAction(
 
 //! ------------ RECUPERER POSITION D'UNE ENTITE ------------
 
-export function getEntityPos(array, entity) {
+export function getEntityPos(board, entity) {
     // parcourir le tableau puis return la position du joueur quand trouvé
-    for (let x = 0; x < array.length; x++) {
-        for (let y = 0; y < array[x].length; y++) {
-            if (array[x][y].entity == entity) {
+    for (let x = 0; x < board.length; x++) {
+        for (let y = 0; y < board[x].length; y++) {
+            if (board[x][y].entity == entity) {
                 return { x: x, y: y };
             }
         }
@@ -100,15 +102,20 @@ function canTarget(board, targetPos, entity) {
 
 //! ------------ VERIF IF IN RANGE ------------
 
-function isInRange(range, posA, posB){
+export function isInRange(range, posA, posB){
     const realRange =  Math.abs(posA.x - posB.x) + Math.abs(posA.y - posB.y);
-  
     return realRange <= range;
 }
 
 //! ------------ VERIF IF ALIGNED ------------
 
-function isAligned(playerPos, targetPos) {
+/**
+ * 
+ * @param {*} playerPos 
+ * @param {*} targetPos 
+ * @returns 
+ */
+export function isAligned(playerPos, targetPos) {
     const isAlignedX = playerPos.x == targetPos.x;
     const isAlignedY = playerPos.y == targetPos.y;
     return isAlignedX || isAlignedY;  

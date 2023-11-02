@@ -1,7 +1,6 @@
 import { updateBoard } from "../board/index.js";
 import { Entity, Type } from "../constants/index.js";
 
-//TODO RANGE OF SPELL USING action.range && ALLOW TO PUSH ON GOAL TILE? && ADD KEY IN DB FOR THE PUSH DISTANCE
 export function pushEnemy(board, playerPos, playerHtml, targetPos, action) {
 
     const isAlignedX = playerPos.x == targetPos.x;

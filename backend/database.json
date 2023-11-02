@@ -4,7 +4,7 @@
             "id": 1,
             "name": "MAP 1",
             "pm": 5,
-            "spells": [1,3],
+            "spells": [1,2,3],
             "board": [
                 [
                     {

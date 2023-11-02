@@ -1,12 +1,26 @@
-#board{
+body{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-td{
+#board{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: relative;
+}
+
+.row{
+    display: flex;
+    gap: 2px;
+}
+
+.tile{
     height: 70px;
     width: 70px;
     border-style: solid;
+    display: flex;
 }
 
 .empty{
@@ -44,12 +58,33 @@ td{
 }
 
 #victory{
-    width: 100px;
+    width: 20%;
     height: 100px;
     background-color: yellow;
+    border: solid black;
+    box-shadow: -5px 5px 5px black;
     position: absolute;
-    top: 100px;
-    left: 100px;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -10%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    font-size: 25px;
+}
+
+#spells{
+    display: flex;
+    gap: 3px
+}
+
+.hidden{
     display: none;
+}
+
+.flex{
+    display: flex;
 }
 

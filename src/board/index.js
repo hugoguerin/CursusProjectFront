@@ -7,27 +7,28 @@ import { findAllReachableCells } from "../spells/pm.js";
 export function createBoard(board, updateTargetPos) {   
     
     const boardHtml = document.getElementById("board");
-    const body = document.createElement("tbody");
 
     for (let x = 0; x < board.length; x++) {
-        const tr = document.createElement("tr");
+        const row = document.createElement("div");
+        row.classList.add("row");
         for (let y = 0; y < board[x].length; y++) {
             const current = board[x][y];
-            const td = document.createElement("td");   
+            const tile = document.createElement("div");  
+            tile.classList.add("tile");
+
             //Rajoute la clé htmlElement aux objets du tableau ET leurs donnent leurs VUE html
-            current.htmlElement = td;
+            current.htmlElement = tile;
             
-            td.addEventListener("click", function(event) {
+            tile.addEventListener("click", function(event) {
                 updateTargetPos({x,y});
             });
             
             current.highlight = Highlight.None;
              
-            tr.appendChild(td);
+            row.appendChild(tile);
         }
-        body.appendChild(tr);
+        boardHtml.appendChild(row);
     }
-    boardHtml.appendChild(body);
 }
 
 //TODO MODIFY TO UPDATE ONLY NECESSARY TILES
@@ -47,7 +48,7 @@ export function updateBoard(board, playerHtml){
 export function updateTile(tile, playerHtml) {
 
     tile.htmlElement.className = "";
-    tile.htmlElement.classList.add(tile.type);
+    tile.htmlElement.classList.add("tile", tile.type);
 
     if (tile.htmlElement.firstChild) {
         tile.htmlElement.removeChild(tile.htmlElement.firstChild);
@@ -152,6 +153,9 @@ export function checkVictory(board) {
         // removeAllEventListeners(playerHtml);
         let spellsHtml = document.getElementById("spells");
         removeAllEventListeners(spellsHtml);
+        const victory = document.getElementById("victory");
+        victory.classList.add("flex");
+
     }
 
 }

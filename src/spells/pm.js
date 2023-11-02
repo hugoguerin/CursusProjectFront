@@ -4,18 +4,16 @@ import { Entity, Type } from "../constants/index.js";
 
 //! ------------ TROUVER LES CASES ATTEIGANBLES AVEC X PM ------------
 
-
-//TODO EMPECHER DE PUSH LES MEMES POSITIONS AVEC COUT EN PM DIFFERENT
 /**
  * 
- * @param {*} array 
+ * @param {*} board 
  * @param {*} maxMovements 
  * @param {*} position 
  * @returns 
  */
-function findAllReachableCells(array, maxMovements, position) {
-    const rows = array.length;
-    const cols = array[0].length;
+export function findAllReachableCells(board, maxMovements, position) {
+    const rows = board.length;
+    const cols = board[0].length;
     const directions = [
         [-1, 0], // Up
         [1, 0],  // Down
@@ -55,8 +53,8 @@ function findAllReachableCells(array, maxMovements, position) {
                     !processedCells.includes(`${newX},${newY}`) &&
                     
                     // Et que la case est libre
-                    array[newX][newY].type !== Type.Wall &&
-                    array[newX][newY].entity == Entity.None
+                    board[newX][newY].type !== Type.Wall &&
+                    board[newX][newY].entity == Entity.None
                 ) {
                     queue.push([newX, newY, movements + 1]);
                 }

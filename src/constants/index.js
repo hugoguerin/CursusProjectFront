@@ -9,3 +9,9 @@ export const Entity = {
 	Player: "player",
 	Enemy: "enemy",
 }
+
+export const Highlight = {
+	None: "none",
+	Pm: "pm",
+	Spell: "spell"
+}

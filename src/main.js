@@ -1,8 +1,8 @@
-import { createBoard, resetHighlights, updateBoard, updateHighlights } from "./board/index.js";
+import { checkVictory, createBoard, getEntityPos, resetHighlights, updateBoard, updateHighlights } from "./board/index.js";
 import { Entity, Highlight } from "./constants/index.js";
 import { getLevelById } from "./services/api-level.js";
 import { getSpellsByIds } from "./services/api-spell.js";
-import { createSpells, doAction, getEntityPos } from "./spells/index.js";
+import { createSpells, doAction } from "./spells/index.js";
 
 // REQUETE
 
@@ -34,10 +34,6 @@ const playerPosHtml = document.getElementById("playerPos");
 updatePlayerPos(getEntityPos(level.board, Entity.Player));
 
 const playerHtml = document.createElement("div");
-// playerHtml.addEventListener('click', function(event) {
-//     updateAction(null, true);
-//     console.log("test x2");
-// });
 playerHtml.classList.add(Entity.Player);
 
 //? ----------- PM -----------
@@ -73,7 +69,7 @@ const actionHtml = document.getElementById("action");
 function updateTargetPos(pos) {
     targetPos = pos;  
     targetPosHtml.innerText = `target position: ${targetPos ? `${targetPos.x}, ${targetPos.y}` : "-"}`;
-
+    // if on player
     if (playerPos.x == targetPos.x && playerPos.y == targetPos.y) {
         updateAction(null, true);
     } else {
@@ -88,12 +84,18 @@ function updateTargetPos(pos) {
             updatePlayerPm
         );
         updateAction(null);
+
+        checkVictory(level.board)  
     }
 }
 
 let targetPos = null;
 const targetPosHtml = document.getElementById("targetPos");
-// updateTargetPos(targetPos);
+
+const retryHtml = document.getElementById("retry");
+retryHtml.addEventListener("click", function(event) {
+    window.location.reload();
+});
 
 // CREATE HTML
 

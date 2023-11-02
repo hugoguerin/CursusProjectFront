@@ -78,21 +78,6 @@ export function doAction(
     }
 }
 
-
-
-//! ------------ RECUPERER POSITION D'UNE ENTITE ------------
-
-export function getEntityPos(board, entity) {
-    // parcourir le tableau puis return la position du joueur quand trouvé
-    for (let x = 0; x < board.length; x++) {
-        for (let y = 0; y < board[x].length; y++) {
-            if (board[x][y].entity == entity) {
-                return { x: x, y: y };
-            }
-        }
-    }
-}
-
 //! ------------ VERIF TARGET ENTITY ------------
 
 function canTarget(board, targetPos, entity) {

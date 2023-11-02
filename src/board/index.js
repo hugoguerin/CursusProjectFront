@@ -6,7 +6,7 @@ import { findAllReachableCells } from "../spells/pm.js";
 
 export function createBoard(board, updateTargetPos) {   
     
-    const boardHtml = document.querySelector("#board");
+    const boardHtml = document.getElementById("board");
     const body = document.createElement("tbody");
 
     for (let x = 0; x < board.length; x++) {
@@ -114,4 +114,49 @@ export function resetHighlights(board, playerHtml) {
         }
     }
     updateBoard(board, playerHtml);
+}
+
+
+// TODO TRAD COMMENTS
+//! ------------ RECUPERER POSITION D'UNE ENTITE ------------
+export function getEntityPos(board, entity) {
+    // parcourir le tableau puis return la position de la première entité trouvée
+    for (let x = 0; x < board.length; x++) {
+        for (let y = 0; y < board[x].length; y++) {
+            if (board[x][y].entity == entity) {
+                return { x: x, y: y };
+            }
+        }
+    }
+}
+
+function getTypePos(board, type) {
+    // parcourir le tableau puis return la position de la première tile avec le bon type
+    for (let x = 0; x < board.length; x++) {
+        for (let y = 0; y < board[x].length; y++) {
+            if (board[x][y].type == type) {
+                return { x: x, y: y };
+            }
+        }
+    }
+}
+
+export function checkVictory(board) {
+    const goalPos = getTypePos(board, Type.Goal);
+    
+    if (board[goalPos.x][goalPos.y].entity == Entity.Player){
+        console.log("GG");        
+        const boardHtml = document.getElementById("board"); 
+        removeAllEventListeners(boardHtml);
+        // IF PLAYER NO LONGER PART OF BOARD: DO THIS 
+        // removeAllEventListeners(playerHtml);
+        let spellsHtml = document.getElementById("spells");
+        removeAllEventListeners(spellsHtml);
+    }
+
+}
+
+function removeAllEventListeners(element) {
+    var clonedElement = element.cloneNode(true);
+    element.parentNode.replaceChild(clonedElement, element);
 }

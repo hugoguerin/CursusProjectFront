@@ -240,7 +240,7 @@
             "id": 2,
             "name": "MAP 2",
             "pm": 4,
-            "spells": [2,3],
+            "spells": [1,2,3],
             "board": [
                 [
                     {
@@ -476,15 +476,15 @@
     "spells": [
         {
             "id": 1,
-            "name": "tbd",
-            "range": 4,
-            "aligned": false,
-            "entity": "none"
+            "name": "Push 1",
+            "range": 3,
+            "aligned": true,
+            "entity": "enemy"
         },
         {
             "id": 2,
-            "name": "Push 1",
-            "range": 3,
+            "name": "Push 2",
+            "range": 2,
             "aligned": true,
             "entity": "enemy"
         },

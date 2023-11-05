@@ -164,3 +164,7 @@ function removeAllEventListeners(element) {
     var clonedElement = element.cloneNode(true);
     element.parentNode.replaceChild(clonedElement, element);
 }
+
+export function isEmpty(tile) {
+    return tile.type == Type.Empty && tile.entity == Entity.None;
+}

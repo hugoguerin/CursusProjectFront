@@ -2,7 +2,7 @@ import { updateBoard, updateTile } from "../board/index.js";
 import { Entity } from "../constants/index.js";
 
 
-//! ------------ TELEPORTE SUR CASE VIDE PEU IMPORTE DISTANCE ------------
+//! ------------ TELEPORT ------------
 /**
  * 
  * @param {*} board 

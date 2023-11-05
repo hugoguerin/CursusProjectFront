@@ -240,7 +240,7 @@
             "id": 2,
             "name": "MAP 2",
             "pm": 4,
-            "spells": [1,2,3],
+            "spells": [1,2,3,4,5,6],
             "board": [
                 [
                     {
@@ -490,6 +490,27 @@
         },
         {
             "id": 3,
+            "name": "Push 3",
+            "range": 1,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 4,
+            "name": "Bond 1",
+            "range": 1,
+            "aligned": false,
+            "entity": "none"
+        },
+        {
+            "id": 5,
+            "name": "Bond 3",
+            "range": 3,
+            "aligned": false,
+            "entity": "none"
+        },
+        {
+            "id": 6,
             "name": "Bond 5",
             "range": 5,
             "aligned": false,

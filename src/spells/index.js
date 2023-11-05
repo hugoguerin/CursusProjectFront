@@ -1,6 +1,6 @@
 import { Type } from "../constants/index.js";
 import { walk } from "./pm.js";
-import { pushEnemy1, pushEnemy2 } from "./push.js";
+import { pushEnemy1, pushEnemy2, pushEnemy3 } from "./push.js";
 import { teleport } from "./teleport.js";
 
 function createSpell(spell, updateAction) {
@@ -71,8 +71,19 @@ export function doAction(
 
         case 3:
             console.log(action.name);
+            pushEnemy3(board,playerPos,playerHtml,targetPos);
+
+            break;
+        
+        case 4:
+
+        case 5:
+
+        case 6:
+            console.log(action.name);
             const newPlayerPos = teleport(board, playerPos, targetPos, playerHtml);
             updatePlayerPos(newPlayerPos);
+            
             break;
 
         default: 

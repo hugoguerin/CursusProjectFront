@@ -1,15 +1,25 @@
-import { checkVictory, createBoard, getEntityPos, resetHighlights, updateBoard, updateHighlights } from "./board/index.js";
-import { Entity, Highlight } from "./constants/index.js";
-import { getLevelById } from "./services/api-level.js";
-import { getSpellsByIds } from "./services/api-spell.js";
-import { createSpells, doAction } from "./spells/index.js";
+import { checkVictory, createBoard, getEntityPos, resetHighlights, updateBoard, updateHighlights } from "./src/board/index.js";
+import { Entity, Highlight } from "./src/constants/index.js";
+import { getLevelById } from "./src/services/api-level.js";
+import { getSpellsByIds } from "./src/services/api-spell.js";
+import { createSpells, doAction } from "./src/spells/index.js";
+
+const path = window.location.pathname;
+// Regex chatgpt to get level id: 
+const match = path.match(/\/level\/(\d+)/);
+
+let slug = 1;
+
+if (match) {
+    slug = match[1];
+}
 
 // REQUETE
 
-let level = await getLevelById(2);  
+let level = await getLevelById(slug);  
 
 if (level == null) {
-    throw new Error("Erreur dans la requête de niveau");
+    throw new Error("Erreur dans la requête de level");
 }
 
 let spells = await getSpellsByIds(level.spells);

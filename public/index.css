@@ -43,14 +43,18 @@ img{
     align-items: center;
 }
 
-button{
+button, a{
     font-family: alagard;
+    border: 2px solid #f4f3ee;
     border-color: #f4f3ee;
     border-radius: 5%;
     color: #f4f3ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#jouer{
+#play{
   
     height: 70px;
     width: 180px;
@@ -58,7 +62,7 @@ button{
     font-size: 40px;
 }
 
-#editeur, #quitter, #encyclopedie, #classique, #communaute, #retourmenubtn{
+#editor, #classic, #community, #back{
 
     height: 50px;
     width: 140px;
@@ -66,12 +70,12 @@ button{
     font-size: 22px;
 }
 
-#retourmenubtn{
+#back{
     background-color: #8c271e;
 }
 
 
-button:hover{
+button:hover, a:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -80,13 +84,13 @@ button:hover{
     display: none !important;
 }
 
-#choixmode{
+#type{
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#choixmoderetourmenu{
+#typeSelection{
     width: 100%;
     height: 50%;
     display: flex;
@@ -95,7 +99,11 @@ button:hover{
     justify-content: space-evenly;
 }
 
-#classique, #communaute{
+#classic, #community{
     margin-left: 20px;
     margin-right: 20px;
+}
+
+a:link, a:visited{
+    text-decoration: none;
 }

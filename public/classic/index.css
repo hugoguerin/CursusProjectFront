@@ -26,6 +26,10 @@ h1{
     width: 100%;
     height: 60vh;
     display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -42,14 +46,17 @@ h1{
     height: 60px;
     font-family: alagard;
     font-size: 30px;
-    border-color: #f4f3ee;
-    border-radius: 5%;
     color: #f4f3ee;
     background-color: #171d20;
     margin: 10px;
+    border-radius: 5%;
+    border: 2px solid #f4f3ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#retourmenu{
+#divMenuButton{
     width: 100%;
     height: 20vh;
     display: flex;
@@ -57,22 +64,28 @@ h1{
     align-items: center;
 }
 
-#retourmenubtn{
-    margin-top: 20px;
-    font-family: alagard;
-    border-color: #f4f3ee;
-    border-radius: 5%;
-    color: #f4f3ee;
-    height: 50px;
-    width: 140px;
-    background-color: #8c271e;
-    font-size: 22px;
+a:link, a:visited{
+    text-decoration: none;
 }
 
-button:hover{
-    cursor: pointer;
+a:hover{
     transform: scale(1.1);
 }
+
+#menuButton:link, #menuButton:visited{   
+    background-color: #8c271e;
+    width: 150px;
+    height: 60px;
+    font-family: alagard;
+    color: #f4f3ee;
+    font-size: 26px;
+    border-radius: 5%;
+    border: 2px solid #f4f3ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 

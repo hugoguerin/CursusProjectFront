@@ -2,8 +2,6 @@
 
 ## SETUP
 
-To launch the backend:
-
 ```
 npm install
 npm run frontend

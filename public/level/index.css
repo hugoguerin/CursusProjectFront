@@ -7,31 +7,36 @@ body{
 #board{
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    /* gap: 2px; */
     position: relative;
 }
 
 .row{
     display: flex;
-    gap: 2px;
+    /* gap: 2px; */
 }
 
 .tile{
     height: 70px;
     width: 70px;
-    border-style: solid;
+    /* border-style: solid; */
     display: flex;
 }
 
 .empty{
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
+    background-image: url(../assets/textures/empty.png);
+    background-size: cover;
+ 
 }
 
 .enemy{
-    background-color: orange;
-    width: 30px;
-    height: 30px;
-    margin: auto;
+    /* /* /* background-color: orange; */
+    width: 70px;
+    height: 70px; 
+    /* margin: auto; */
+    background-image: url(../assets/textures/enemy.png);
+    background-size: cover;
 }
 
 .wall{
@@ -39,22 +44,32 @@ body{
 }
 
 .player{
-    width: 30px;
-    height: 30px;
-    background-color: rgb(40, 40, 131); 
+    width: 70px;
+    height: 70px;
+    /* background-color: rgb(40, 40, 131);  */
+    background-image: url(../assets/textures/player.png);
     margin: auto;
 }
 
+
 .goal{
     background-color: lightgreen;
+    background-image: url(../assets/textures/goal3.png);
+    background-size: cover;
 }
 
 .highlight-pm{
-    background-color: rgba(29, 153, 29, 0.4);
+    /* background-color: rgba(29, 153, 29, 0.4); */
+    filter: hue-rotate(79deg);
+    -webkit-filter: hue-rotate(79deg);
+    -moz-filter: hue-rotate(79deg);
 }
 
 .highlight-spell{
-    background-color: lightblue;
+    /* background-color: lightblue; */
+    filter: brightness(139%) hue-rotate(79deg);
+-webkit-filter: brightness(139%) hue-rotate(79deg);
+-moz-filter: brightness(139%) hue-rotate(79deg);
 }
 
 #victory{

@@ -16,7 +16,6 @@ export const getAllLevels = async () => {
         });
 };
 
-
 export const getLevelById = async (id) => {
     const method = "get";
     const headers = {

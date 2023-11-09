@@ -7,8 +7,7 @@ function createSpell(spell, updateAction) {
 
     let spellHtml = document.createElement("div");
     let spellImg = document.createElement("img");
-    // spellHtml.classList.add("");
-    spellImg.src = `../assets/spells/${spell.id}.jpg`
+    spellImg.src = `../assets/spells/${spell.id}.png`
     spellImg.alt = spell.name;
     spellHtml.addEventListener('click', function(event) {
         updateAction(spell)

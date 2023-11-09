@@ -4,235 +4,84 @@
             "id": 1,
             "name": "MAP 1",
             "pm": 5,
-            "spells": [1,2,3],
-            "board": [
+            "spells": [1,2,3,4],
+            "board":  [
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "player"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "enemy"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "enemy"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "enemy"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "enemy"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "goal",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ]
             ]
         },
@@ -243,278 +92,267 @@
             "spells": [1,2,3,4,5,6],
             "board": [
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "player"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "enemy"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "goal", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "enemy"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "enemy"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "enemy"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "empty",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "goal",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ],
                 [
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    },
-                    {
-                        "type": "wall",
-                        "entity": "none"
-                    }
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "player"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
                 ]
             ]
+        },
+        {
+            "id": 3,
+            "name": "MAP 3",
+            "pm": 3,
+            "spells": [1,2,3,4,5,6],
+            "board": [
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ]
+            ]         
         }
     ],
     "spells": [
         {
             "id": 1,
-            "name": "Push 1",
+            "name": "Light Breeze",
+            "description":"Pushes enemy back 1 tile.",
             "range": 3,
             "aligned": true,
             "entity": "enemy"
         },
         {
             "id": 2,
-            "name": "Push 2",
+            "name": "Strong Wind",
+            "description":"Pushes enemy back 2 tiles.",
             "range": 2,
             "aligned": true,
             "entity": "enemy"
         },
         {
             "id": 3,
-            "name": "Push 3",
+            "name": "Hurricane",
+            "description":"Pushes enemy back 3 tiles.",
             "range": 1,
             "aligned": true,
             "entity": "enemy"
         },
         {
             "id": 4,
-            "name": "Bond 1",
+            "name": "Hop",
+            "description":"Teleports you to 1 tile away.",
             "range": 1,
             "aligned": false,
             "entity": "none"
         },
         {
             "id": 5,
-            "name": "Bond 3",
+            "name": "Leap",
+            "description":"Teleports you to 3 tiles away.",
             "range": 3,
             "aligned": false,
             "entity": "none"
         },
         {
             "id": 6,
-            "name": "Bond 5",
+            "name": "Fly",
+            "description":"Teleports you to 5 tiles away.",
             "range": 5,
             "aligned": false,
             "entity": "none"
+        },
+        {
+            "id": 7,
+            "name": "TBD",
+            "description":"TBD",
+            "range": 3,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 8,
+            "name": "TBD",
+            "description":"TBD",
+            "range": 2,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 9,
+            "name": "TBD",
+            "description":"TBD",
+            "range": 1,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 10,
+            "name": "TBD",
+            "description":"TBD",
+            "range": 1,
+            "aligned": false,
+            "entity": "none"
+        },
+        {
+            "id": 11,
+            "name": "TBD",
+            "description":"TBD",
+            "range": 3,
+            "aligned": false,
+            "entity": "none"
+        },
+        {
+            "id": 12,
+            "name": "TBD",
+            "description":"",
+            "range": 3,
+            "aligned": false,
+            "entity": "none"
         }
+
     ]
 }

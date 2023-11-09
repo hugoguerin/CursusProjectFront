@@ -28,7 +28,7 @@ if (spells == null) {
     throw new Error("Erreur dans la requête de sorts");
 }
 
-// populate
+// Populate
 level.spells = spells;
 
 // INIT GAME
@@ -59,7 +59,7 @@ updatePlayerPm(playerPm);
 //? ----------- ACTION -----------
 function updateAction(spell, fromPlayerHtml = false) {
     action = spell;
-    actionHtml.innerText = `action: ${action ? `id: ${action.id}, name: ${action.name}, range: ${action.range}` : "-"}`;
+    actionHtml.innerText = `action: ${action ? `id: ${action.id}, name: ${action.name}, range: ${action.range}, ${action.description}` : "-"}`;
     if (action != null) {  
         updateHighlights(level.board, action.range, action.aligned, playerPos, Highlight.Spell, playerHtml);
     } else {
@@ -109,8 +109,6 @@ retryHtml.addEventListener("click", function(event) {
 
 // CREATE HTML
 
-createBoard(level.board, updateTargetPos);
-
-updateBoard(level.board, playerHtml);
+createBoard(level.board, updateTargetPos, playerHtml);
 
 createSpells(level.spells, updateAction);

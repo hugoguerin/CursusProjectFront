@@ -4,7 +4,7 @@ import { findAllReachableCells } from "../spells/pm.js";
 
 //! ------------ CREATE BOARD ------------
 
-export function createBoard(board, updateTargetPos) {   
+export function createBoard(board, updateTargetPos, playerHtml) {   
     
     const boardHtml = document.getElementById("board");
 
@@ -13,18 +13,20 @@ export function createBoard(board, updateTargetPos) {
         row.classList.add("row");
         for (let y = 0; y < board[x].length; y++) {
             const current = board[x][y];
-            const tile = document.createElement("div");  
-            tile.classList.add("tile");
+            const tile = document.createElement("div");
 
-            //Rajoute la clé htmlElement aux objets du tableau ET leurs donnent leurs VUE html
+            //add htmlElement key to the object
             current.htmlElement = tile;
             
+            //add highlight key to the object
+            current.highlight = Highlight.None;
+
+            updateTile(current, playerHtml);
+
             tile.addEventListener("click", function(event) {
                 updateTargetPos({x,y});
             });
             
-            current.highlight = Highlight.None;
-             
             row.appendChild(tile);
         }
         boardHtml.appendChild(row);

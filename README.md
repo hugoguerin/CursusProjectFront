@@ -5,5 +5,4 @@
 ```
 npm install
 npm run frontend
-npm run backend
 ```

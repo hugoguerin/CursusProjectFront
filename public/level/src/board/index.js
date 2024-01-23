@@ -70,13 +70,11 @@ export function updateTile(tile, playerHtml) {
     }
 }
 
-//TODO RERORWK ELSE IF
+//TODO REWORK ELSE IF ??
 export function updateHighlights(board, distance, aligned, playerPos, highlight, playerHtml) {
     
     let reachableCells = [];
     if (highlight == Highlight.Pm) {
-        // before "x,y,pm"
-        // after "x,y"
         reachableCells = findAllReachableCells(board, distance, playerPos)
             .map(posAsString => {
                 const cells = posAsString.split(",");
@@ -119,11 +117,7 @@ export function resetHighlights(board, playerHtml) {
     updateBoard(board, playerHtml);
 }
 
-
-// TODO TRAD COMMENTS
-//! ------------ RECUPERER POSITION D'UNE ENTITE ------------
 export function getEntityPos(board, entity) {
-    // parcourir le tableau puis return la position de la première entité trouvée
     for (let x = 0; x < board.length; x++) {
         for (let y = 0; y < board[x].length; y++) {
             if (board[x][y].entity == entity) {
@@ -134,7 +128,6 @@ export function getEntityPos(board, entity) {
 }
 
 function getTypePos(board, type) {
-    // parcourir le tableau puis return la position de la première tile avec le bon type
     for (let x = 0; x < board.length; x++) {
         for (let y = 0; y < board[x].length; y++) {
             if (board[x][y].type == type) {
@@ -151,22 +144,25 @@ export function checkVictory(board) {
         console.log("GG");        
         const boardHtml = document.getElementById("board"); 
         removeAllEventListeners(boardHtml);
-        // IF PLAYER NO LONGER PART OF BOARD: DO THIS 
-        // removeAllEventListeners(playerHtml);
         let spellsHtml = document.getElementById("spells");
         removeAllEventListeners(spellsHtml);
         const victory = document.getElementById("victory");
+        victory.classList.remove("hidden");
         victory.classList.add("flex");
-
+        victory.classList.add("zindex");       
     }
-
 }
 
-function removeAllEventListeners(element) {
+export function removeAllEventListeners(element) {
     var clonedElement = element.cloneNode(true);
     element.parentNode.replaceChild(clonedElement, element);
 }
 
 export function isEmpty(tile) {
-    return tile.type == Type.Empty && tile.entity == Entity.None;
+    return tile.type == Type.Empty && tile.entity == Entity.None || tile.type == Type.Goal && tile.entity == Entity.None;
+}
+
+export function isWithinBounds(board, position) {
+    return position.x >= 0 && position.x < board.length &&
+           position.y >= 0 && position.y < board[0].length;
 }

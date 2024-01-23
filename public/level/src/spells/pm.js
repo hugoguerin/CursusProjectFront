@@ -67,7 +67,6 @@ export function findAllReachableCells(board, maxMovements, position) {
 
 //! ------------ TELEPORTE AVEC CONTRAINTE PM & OBSTACLE------------
 
-
 /**
  * 
  * @param {*} array 
@@ -122,50 +121,4 @@ export function walk(array, playerPosition, desiredPosition, maxMovements, updat
 
     }
     return { x: playerPosition.x, y: playerPosition.y };
-}
-
-//! ------------ AFFICHAGE DES CASES ATTEIGNABLES ------------
-
-
-export function displayPM() {
-    
-    let playerClicked = false;
-    let deplacementDisplayed = false;
-    
-    
-    playerHtml.addEventListener('click', () => {
-        playerClicked = true;
-    })
-    
-    document.addEventListener('click', () => {
-       
-        if (playerClicked && !deplacementDisplayed) {
-            const reachableCells = findAllReachableCells(board, PM, playerPosition);
-            const reachablePositions = Array.from(reachableCells).map(posString => {
-                const posArray = posString.split(',');
-                return {
-                    x:posArray[0],
-                    y:posArray[1],
-                }
-            }) 
-            for (let i = 0; i < reachablePositions.length; i++) {
-                const selected =  board[reachablePositions[i].x][reachablePositions[i].y].htmlElement;
-                selected.classList.add('deplacement');
-            }
-            deplacementDisplayed = true;
-        } else {
-            
-            const alltds = Array.from(document.querySelectorAll('.deplacement'));
-            for (let i = 0; i < alltds.length; i++) {
-                // if ( alltds[i].classList.contains('deplacement')) {
-                alltds[i].classList.remove('deplacement');   
-                // }
-            }    
-            deplacementDisplayed = false; 
-                
-        }
-    
-        playerClicked = false;
-        
-    })
 }

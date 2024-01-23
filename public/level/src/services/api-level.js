@@ -1,4 +1,5 @@
-const URL = "http://localhost:8001/levels";
+// const URL = "http://localhost:8001/levels";
+const URL = "http://localhost:3000/levels";
 
 export const getAllLevels = async () => {
     const method = "get";
@@ -31,3 +32,4 @@ export const getLevelById = async (id) => {
             return null;
         });
 };
+

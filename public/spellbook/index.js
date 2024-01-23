@@ -1,6 +1,6 @@
 import { getAllSpells } from "../level/src/services/api-spell.js";
 
-let container = document.getElementById("container");
+const container = document.getElementById("container");
 
 
 let spells = await getAllSpells();
@@ -15,6 +15,8 @@ for (let i = 0; i < spells.length; i++) {
 
     // Style spell & col 1
     spell.classList.add("spell");
+    spell.style.height = "75px";
+    spell.style.width = "350px";
     col1.style.width = "fit-content";
     col1.style.height = "100%";
     col1.style.padding = "5px";

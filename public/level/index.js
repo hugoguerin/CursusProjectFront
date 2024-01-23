@@ -1,46 +1,34 @@
 import { checkVictory, createBoard, getEntityPos, resetHighlights, updateBoard, updateHighlights } from "./src/board/index.js";
 import { Entity, Highlight } from "./src/constants/index.js";
 import { getLevelById } from "./src/services/api-level.js";
-import { getSpellsByIds } from "./src/services/api-spell.js";
 import { createSpells, doAction } from "./src/spells/index.js";
 
 const path = window.location.pathname;
 // Regex chatgpt to get level id: 
 const match = path.match(/\/level\/(\d+)/);
 
-let slug = 1;
+let levelId = 1;
 
 if (match) {
-    slug = match[1];
+    levelId = match[1];
 }
 
 // REQUETE
 
-let level = await getLevelById(slug);  
+let level = await getLevelById(levelId);  
 
 if (level == null) {
     throw new Error("Erreur dans la requête de level");
 }
-
-let spells = await getSpellsByIds(level.spells);
-
-if (spells == null) {
-    throw new Error("Erreur dans la requête de sorts");
-}
-
-// Populate
-level.spells = spells;
 
 // INIT GAME
 
 //? ----------- PLAYER POS -----------
 function updatePlayerPos(pos) {
     playerPos = pos;  
-    playerPosHtml.innerText = `player position: ${playerPos ? `${playerPos.x}, ${playerPos.y}` : "-"}`;
 }
 
 let playerPos = null;
-const playerPosHtml = document.getElementById("playerPos");
 updatePlayerPos(getEntityPos(level.board, Entity.Player));
 
 const playerHtml = document.createElement("div");
@@ -49,7 +37,7 @@ playerHtml.classList.add(Entity.Player);
 //? ----------- PM -----------
 function updatePlayerPm(pm) {
     playerPm = pm;
-    playerPmHtml.innerText = `pm: ${playerPm}`;
+    playerPmHtml.innerText = `Movement Points: ${playerPm}`;
 }
 
 let playerPm = level.pm;
@@ -59,7 +47,8 @@ updatePlayerPm(playerPm);
 //? ----------- ACTION -----------
 function updateAction(spell, fromPlayerHtml = false) {
     action = spell;
-    actionHtml.innerText = `action: ${action ? `id: ${action.id}, name: ${action.name}, range: ${action.range}, ${action.description}` : "-"}`;
+    spellNameHtml.innerText = `${action ? `${action.name}` : "-"}`;
+    spellDescriptionHtml.innerText = `${action ? `${action.description}` : "-"}`;
     if (action != null) {  
         updateHighlights(level.board, action.range, action.aligned, playerPos, Highlight.Spell, playerHtml);
     } else {
@@ -72,13 +61,12 @@ function updateAction(spell, fromPlayerHtml = false) {
 }
 
 let action = null;
-const actionHtml = document.getElementById("action");
-// updateAction(action);
+const spellNameHtml = document.getElementById("spellName");
+const spellDescriptionHtml = document.getElementById("spellDescription")
 
 //? ----------- TARGET POS -----------
 function updateTargetPos(pos) {
     targetPos = pos;  
-    targetPosHtml.innerText = `target position: ${targetPos ? `${targetPos.x}, ${targetPos.y}` : "-"}`;
     // if on player
     if (playerPos.x == targetPos.x && playerPos.y == targetPos.y) {
         updateAction(null, true);
@@ -100,14 +88,18 @@ function updateTargetPos(pos) {
 }
 
 let targetPos = null;
-const targetPosHtml = document.getElementById("targetPos");
 
 const retryHtml = document.getElementById("retry");
 retryHtml.addEventListener("click", function(event) {
     window.location.reload();
 });
 
-// CREATE HTML
+const victoryHtml= document.getElementById("victory");
+victoryHtml.href = `/level/${level.id+1}`
+
+
+const levelNameHtml = document.getElementById("levelName");
+levelNameHtml.innerText= level.name;
 
 createBoard(level.board, updateTargetPos, playerHtml);
 

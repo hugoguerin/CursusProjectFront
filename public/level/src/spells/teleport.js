@@ -24,7 +24,6 @@ export function teleport(board, playerPosition, targetPos, playerHtml) {
 
     desired.entity = Entity.Player;  
 
-    // updateTile(desired, playerHtml);
     updateBoard(board, playerHtml);
 
     return { x: targetPos.x, y: targetPos.y };

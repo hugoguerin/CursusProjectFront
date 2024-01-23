@@ -1,105 +1,392 @@
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 #board{
     display: flex;
+    height: auto;
+    width: 100%;   
     flex-direction: column;
-    /* gap: 2px; */
     position: relative;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
 }
 
 .row{
     display: flex;
-    /* gap: 2px; */
+    gap: 2px;
 }
 
 .tile{
-    height: 70px;
-    width: 70px;
-    /* border-style: solid; */
-    display: flex;
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.tile:hover{
+    cursor: pointer;
 }
 
 .empty{
-    /* background-color: antiquewhite; */
-    background-image: url(../assets/textures/empty.png);
+    background-image: url(../assets/textures/floor.jpg);
     background-size: cover;
- 
 }
 
 .enemy{
-    /* /* /* background-color: orange; */
-    width: 70px;
-    height: 70px; 
-    /* margin: auto; */
+    width: 100%;
+    height: 100%; 
     background-image: url(../assets/textures/enemy.png);
     background-size: cover;
 }
 
 .wall{
-    background-color: rgb(41, 43, 44);   
+    background-image: url(../assets/textures/wallfloor.png);
+    background-size: cover;  
 }
 
 .player{
-    width: 70px;
-    height: 70px;
-    /* background-color: rgb(40, 40, 131);  */
-    background-image: url(../assets/textures/player.png);
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/textures/player2.png);
     margin: auto;
+    background-size: cover;
 }
 
 
 .goal{
-    background-color: lightgreen;
-    background-image: url(../assets/textures/goal3.png);
+    background-image: url(../assets/textures/goaltest.png);
     background-size: cover;
 }
 
-.highlight-pm{
-    /* background-color: rgba(29, 153, 29, 0.4); */
-    filter: hue-rotate(79deg);
-    -webkit-filter: hue-rotate(79deg);
-    -moz-filter: hue-rotate(79deg);
-}
-
-.highlight-spell{
-    /* background-color: lightblue; */
-    filter: brightness(139%) hue-rotate(79deg);
--webkit-filter: brightness(139%) hue-rotate(79deg);
--moz-filter: brightness(139%) hue-rotate(79deg);
-}
-
-#victory{
-    width: 20%;
-    height: 100px;
-    background-color: yellow;
-    border: solid black;
-    box-shadow: -5px 5px 5px black;
+.highlight-pm:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 171, 15, 0.2);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -50px;
-    margin-left: -10%;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    font-family: Roboto;
-    font-size: 25px;
+    top: 0;
+    left: 0;
 }
 
-#spells{
+.highlight-spell:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 60, 193, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.used{
+    filter: grayscale(100%);
+}
+
+.flex{
     display: flex;
-    gap: 3px
+}
+
+.zindex{
+    z-index: 1;
 }
 
 .hidden{
     display: none;
 }
 
-.flex{
+a:link, a:visited{
+    text-decoration: none;
+}
+
+body{
+    background-color: #171d20;
+}
+
+#levelName{
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: alagard;
+    color: #f4f3ee;
+    font-size: 35px;
+}
+
+#retryDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#retry{   
+    background-color: #198e5e;
+    font-family: alagard;
+    color: #f4f3ee;
+    border-radius: 5%;
+    border: 2px solid #f4f3ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spells{
+    display: flex;
+    justify-content: center;
+    gap: 3px
+}
+
+
+#menuButton:link, #menuButton:visited{   
+    background-color: #8c271e;
+    font-family: alagard;
+    color: #f4f3ee;
+    border-radius: 5%;
+    border: 2px solid #f4f3ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#playerPm{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: alagard;
+    color: #f4f3ee;
+}
+
+#spellName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: alagard;
+    color: #f4f3ee;
+}
+
+#spellDescription{
+    /* border-radius: 5%; */
+    border: 1px solid #f4f3ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: alagard;
+    color: #f4f3ee;
+    text-align: center;
+}
+
+#retry:hover{
+    cursor: pointer;
+}
+
+img:hover{
+    cursor: pointer
+}
+
+#victory {
+    width: 200px;
+    height: 100px;
+    background-color: rgba(212, 218, 33, 0.8);
+    color: black;
+    border: solid black;
+    border-radius: 5%;
+    box-shadow: -5px 5px 5px black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    justify-content: center;
+    align-items: center;
+    font-family: Alagard;
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 1024px){
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 98vh;
+    }
+
+    #board{
+        min-height: 350px;
+    }
+
+    #levelName{
+    font-size: 35px;
+    margin-bottom: 10px;
+    }
+
+    #retry{
+        width: 100px;
+        height: 40px;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    #block1{
+        width: 100%;
+        height: auto;
+    }
+
+    #block2{
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menuButton{
+        width: 100px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #playerPm{
+    font-size: 20px;
+    margin-top: 10px;
+    }
+
+    #b22{
+        width: 100%;
+    }
+
+    #spellName{
+        font-size: 20px;
+    }
+
+    #spellDescription{
+        width: 100%;
+        height: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 389px) and (max-height: 700px){
+    #spells > * > *{
+        height: 40px;
+        width: 40px;
+    }  
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 800px){
+    .tile{
+        width: 75px;
+        height: 75px;
+    }   
+}
+
+@media only screen and (min-width: 801px) {
+    .tile{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    body{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #block1{
+        height: 98vh;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    #block2{
+        height: 98vh;
+        width: 50%;
+        min-width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #levelName{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: alagard;
+        color: #f4f3ee;
+        font-size: 40px;
+    }
+
+    #retryDiv{
+        width: 100%;
+        height: 10%;
+    }
+    
+    #retry{   
+        width: 150px;
+        height: 60px;
+        font-size: 26px;
+        margin-top: 20px;
+    }
+
+    
+#playerPm{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: alagard;
+    color: #f4f3ee;
+    font-size: 40px;
+}
+
+#b22{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#action{
+    width: 100%;
+    height: 30%;
+}
+#spellName{
+    width: 100%;
+    height: 50%;
+    font-size: 32px;
+}
+
+#spellDescription{
+    width: 100%;
+    height: 200px;
+    border: 2px solid #f4f3ee;
+    font-size: 26px;
+}
+
+#b23{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuButton{
+    width: 150px;
+    height: 60px;
+    font-size: 26px;
+}
 }
 

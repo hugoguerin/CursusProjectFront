@@ -1,4 +1,4 @@
-const URL = "http://localhost:8001/spells";
+const URL = "http://localhost:3000/spells";
 
 export const getAllSpells = async () => {
     const method = "get";
@@ -45,6 +45,8 @@ export const getSpellsByIds = async (ids) => {
     };
 
     const queryIds = ids.map((id) => `id=${id}`).join("&");
+
+    console.log(URL + "?" + queryIds);
 
     return fetch(`${URL}?${queryIds}`, { method, headers })
         .then(async (response) => {

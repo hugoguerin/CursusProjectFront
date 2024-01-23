@@ -1,12 +1,16 @@
 import { Type } from "../constants/index.js";
 import { walk } from "./pm.js";
-import { pushEnemy1, pushEnemy2, pushEnemy3 } from "./push.js";
+import {  pushEnemy, pushPlayer } from "./push.js";
+import { pullEnemy, pullPlayer } from "./pull.js";
 import { teleport } from "./teleport.js";
+import { mirrorEnemy, mirrorPlayer } from "./mirror.js";
+import { removeAllEventListeners } from "../board/index.js";
 
 function createSpell(spell, updateAction) {
 
     let spellHtml = document.createElement("div");
     let spellImg = document.createElement("img");
+    spellHtml.id = `spell-${spell.id}`;
     spellImg.src = `../assets/spells/${spell.id}.png`
     spellImg.alt = spell.name;
     spellHtml.addEventListener('click', function(event) {
@@ -56,22 +60,18 @@ export function doAction(
     if (!canTarget(board, targetPos, action.entity)) return;
     if (action.aligned && !isAligned(playerPos, targetPos)) return;
 
+    let usedSpell = document.getElementById(`spell-${action.id}`);
+    usedSpell.classList.add("used");
+    removeAllEventListeners(usedSpell);
+
     switch (action.id) {
         case 1: 
-            console.log(action.name);
-            pushEnemy1(board,playerPos,playerHtml,targetPos,action);
-            break;
-    
+  
         case 2:
-            console.log(action.name);
-            pushEnemy2(board,playerPos,playerHtml,targetPos);
-
-            break;
 
         case 3:
             console.log(action.name);
-            pushEnemy3(board,playerPos,playerHtml,targetPos);
-
+            pushEnemy(board,playerPos,playerHtml,targetPos,action);      
             break;
         
         case 4:
@@ -81,12 +81,58 @@ export function doAction(
         case 6:
             console.log(action.name);
             const newPlayerPos = teleport(board, playerPos, targetPos, playerHtml);
-            updatePlayerPos(newPlayerPos);
-            
+            updatePlayerPos(newPlayerPos);   
+            break;
+
+        case 7:
+
+        case 8:
+
+        case 9:
+            console.log(action.name);
+            pullEnemy(board,playerPos,playerHtml,targetPos,action);
+            break;
+
+        case 10:
+
+        case 11:
+
+        case 12:
+            console.log(action.name);
+            mirrorEnemy(board,playerPos,playerHtml,targetPos)
+            break;
+
+        case 13:
+
+        case 14:
+
+        case 15:
+            console.log(action.name);
+            const pushPlayerPos = pushPlayer(board,playerPos,playerHtml,targetPos,action, updatePlayerPos);
+            updatePlayerPos(pushPlayerPos);
+            break;
+        case 16:
+
+        case 17:
+
+        case 18:
+            console.log(action.name);
+            const pullPlayerPos = pullPlayer(board,playerPos,playerHtml,targetPos,action, updatePlayerPos);
+            updatePlayerPos(pullPlayerPos);
+
+            break;
+        case 19:
+
+        case 20:
+
+        case 21:
+            console.log(action.name);
+            const mirrorPlayerPos = mirrorPlayer(board,playerPos,playerHtml,targetPos);
+            updatePlayerPos(mirrorPlayerPos);
             break;
 
         default: 
-            throw console.error("Ce sort n'existe pas");
+            throw console.error("No spell asigned");
     }
 }
 
@@ -106,12 +152,7 @@ export function isInRange(range, posA, posB){
 
 //! ------------ VERIF IF ALIGNED ------------
 
-/**
- * 
- * @param {*} playerPos 
- * @param {*} targetPos 
- * @returns 
- */
+
 export function isAligned(playerPos, targetPos) {
     const isAlignedX = playerPos.x == targetPos.x;
     const isAlignedY = playerPos.y == targetPos.y;

@@ -9,16 +9,36 @@
     <script type="module" src="index.js"></script>
 </head>
 <body>
-    <div id="board">
-        <div id="victory" class="hidden">VICTORY</div>
-    </div>
-    <div id="playerPos"></div>
-    <div id="playerPm"></div>
-    <div id="targetPos"></div>
-    <div id="action"></div>
-    <div id="spells"></div>
-    <button id="retry" type="button">Retry</button>
-    
 
+    <div id="block1">
+        <div id="levelName"></div>
+        <div id="board">
+            <a id="victory" class="hidden">Next level</a>
+        </div>
+        <div id="retryDiv">
+            <button id="retry" type="button">Retry</button>
+        </div>
+    </div>
+    <div id="block2">
+        <div id="playerPm"></div>
+        <div id="b22">
+            <div id="spells"></div>
+            <div id="action">
+                <div id="spellName">-</div>
+                <div id="spellDescription"></div>
+            </div>
+        </div>
+        <div id="b23">
+            <a id="menuButton" href="/classic">Back</a>  
+        </div>
+    </div>
+
+   
+    <!-- <div id="playerPos"></div> -->
+    <!-- <div id="playerPm"></div> -->
+    <!-- <div id="targetPos"></div> -->
+    
+    
+    
 </body>
 </html>

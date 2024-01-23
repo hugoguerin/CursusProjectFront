@@ -1,147 +1,132 @@
 import { isEmpty, updateBoard } from "../board/index.js";
-import { Entity, Type } from "../constants/index.js";
+import { Entity } from "../constants/index.js";
 
-export function pushEnemy1(board, playerPos, playerHtml, targetPos, action) {
+//
+// NEW VERSION OF PUSH
+//
+
+export function pushEnemy(board, playerPos, playerHtml, targetPos, action) {
 
     const isAlignedX = playerPos.x == targetPos.x;
     const isAlignedY = playerPos.y == targetPos.y;
     const directionX = playerPos.x - targetPos.x;
     const directionY = playerPos.y - targetPos.y;
     
-    let behindEnemy;
+    let behindEnemy = [];
 
     if (isAlignedX) {
         if (directionY < 0) {
-           behindEnemy = board[targetPos.x][targetPos.y + 1];
-           console.log("Push to the right");
+            for (let i = 0; i < action.power; i++) {
+                if (targetPos.y + (i + 1) < board[targetPos.x].length) {
+                    behindEnemy.push(board[targetPos.x][targetPos.y + (i + 1)]);
+                }
+            }
+            console.log("Push to the right");
         } else {
-           behindEnemy = board[targetPos.x][targetPos.y - 1];
-           console.log("Push to the left");
+            for (let i = 0; i < action.power; i++) {
+                if (targetPos.y - (i + 1) >= 0) {
+                    behindEnemy.push(board[targetPos.x][targetPos.y - (i + 1)]);
+                }
+            }
+            console.log("Push to the left");
         }
     } else if (isAlignedY) {
         if (directionX < 0) {
-            behindEnemy = board[targetPos.x + 1][targetPos.y];     
+            for (let i = 0; i < action.power; i++) {
+                if (targetPos.x + (i + 1) < board.length) {
+                    behindEnemy.push(board[targetPos.x + (i + 1)][targetPos.y]);
+                }
+            }   
             console.log("Push to the bottom");
         } else {
-            behindEnemy = board[targetPos.x - 1][targetPos.y];
+             for (let i = 0; i < action.power; i++) {
+                if (targetPos.x - (i + 1) >= 0) {
+                    behindEnemy.push(board[targetPos.x - (i + 1)][targetPos.y]);
+                }
+            }  
             console.log("Push to the top");
         }
     }
 
-    if (isEmpty(behindEnemy)) {
-        const enemyPos = board[targetPos.x][targetPos.y];
-        enemyPos.entity = Entity.None;
-        behindEnemy.entity = Entity.Enemy;
-        updateBoard(board, playerHtml);
+    let enemyPos = board[targetPos.x][targetPos.y];
+
+    for (let i = 0; i < behindEnemy.length; i++) {
+        if (isEmpty(behindEnemy[i])) {
+           enemyPos.entity = Entity.None;
+           enemyPos = behindEnemy[i];
+           behindEnemy[i].entity = Entity.Enemy
+        } else {
+            break;
+        }
     }
+
+    updateBoard(board, playerHtml);
 }
 
-//TODO TRY CATCH? VERTICAL OUT OF BOUND
-export function pushEnemy2(board, playerPos, playerHtml, targetPos) {
+export function pushPlayer(board, playerPos, playerHtml, targetPos, action) {
 
     const isAlignedX = playerPos.x == targetPos.x;
     const isAlignedY = playerPos.y == targetPos.y;
     const directionX = playerPos.x - targetPos.x;
     const directionY = playerPos.y - targetPos.y;
     
-    let behindEnemy;
-    let behindEnemy2;
-    try {
-        if (isAlignedX) {
-            if (directionY < 0) {
-               behindEnemy = board[targetPos.x][targetPos.y + 1];
-               behindEnemy2 = board[targetPos.x][targetPos.y + 2];
-               console.log("Push to the right");
-            } else {
-               behindEnemy = board[targetPos.x][targetPos.y - 1];
-               behindEnemy2 = board[targetPos.x][targetPos.y - 2];
-               console.log("Push to the left");
-            }
-        } else if (isAlignedY) {
-            if (directionX < 0) {
-                behindEnemy = board[targetPos.x + 1][targetPos.y];     
-                behindEnemy2 = board[targetPos.x + 2][targetPos.y];     
-                console.log("Push to the bottom");
-            } else {
-                behindEnemy = board[targetPos.x - 1][targetPos.y];
-                behindEnemy2 = board[targetPos.x - 2][targetPos.y];
-                console.log("Push to the top");
-            }
-        }
-    } catch (error) {
-        console.log("out of bound");
-    }
-    
+    let behindPlayer = [];
+    let behindPlayerPosition = [];
 
-    if (isEmpty(behindEnemy)) {
-        const enemyPos = board[targetPos.x][targetPos.y];
-        if (isEmpty(behindEnemy2)) {
-            enemyPos.entity = Entity.None;
-            behindEnemy2.entity = Entity.Enemy;
-            updateBoard(board, playerHtml);       
+    if (isAlignedX) {
+        if (directionY < 0) {
+            for (let i = 0; i < action.power; i++) {
+                if (playerPos.y - (i + 1) >= 0) {
+                    behindPlayer.push(board[playerPos.x][playerPos.y - (i + 1)]);
+                    behindPlayerPosition.push({x:playerPos.x,y:playerPos.y - (i + 1)});
+                }
+            }
+            console.log("Push player to the left");
         } else {
-            enemyPos.entity = Entity.None;
-            behindEnemy.entity = Entity.Enemy;
-            updateBoard(board, playerHtml);
-        }      
-    }
-} 
-
-export function pushEnemy3(board, playerPos, playerHtml, targetPos) {
-
-    const isAlignedX = playerPos.x == targetPos.x;
-    const isAlignedY = playerPos.y == targetPos.y;
-    const directionX = playerPos.x - targetPos.x;
-    const directionY = playerPos.y - targetPos.y;
-    
-    let behindEnemy;
-    let behindEnemy2;
-    let behindEnemy3;
-    
-    try {
-        if (isAlignedX) {
-            if (directionY < 0) {
-               behindEnemy = board[targetPos.x][targetPos.y + 1];
-               behindEnemy2 = board[targetPos.x][targetPos.y + 2];
-               behindEnemy3 = board[targetPos.x][targetPos.y + 3];
-               console.log("Push to the right");
-            } else {
-               behindEnemy = board[targetPos.x][targetPos.y - 1];
-               behindEnemy2 = board[targetPos.x][targetPos.y - 2];
-               behindEnemy3 = board[targetPos.x][targetPos.y - 3];
-               console.log("Push to the left");
+            for (let i = 0; i < action.power; i++) {
+                if (playerPos.y + (i + 1) < board[playerPos.x].length) {
+                    behindPlayer.push(board[playerPos.x][playerPos.y + (i + 1)]);
+                    behindPlayerPosition.push({x:playerPos.x,y:playerPos.y + (i + 1)});
+                }
             }
-        } else if (isAlignedY) {
-            if (directionX < 0) {
-                behindEnemy = board[targetPos.x + 1][targetPos.y];     
-                behindEnemy2 = board[targetPos.x + 2][targetPos.y];     
-                behindEnemy3 = board[targetPos.x + 3][targetPos.y];     
-                console.log("Push to the bottom");
-            } else {
-                behindEnemy = board[targetPos.x - 1][targetPos.y];
-                behindEnemy2 = board[targetPos.x - 2][targetPos.y];
-                behindEnemy3 = board[targetPos.x - 3][targetPos.y];
-                console.log("Push to the top");
-            }
+            console.log("Push player to the right");
         }
-    } catch (error) {
-        console.log("out of bound");
-    }
-    
-    if (isEmpty(behindEnemy)) {
-        const enemyPos = board[targetPos.x][targetPos.y];
-        if (isEmpty(behindEnemy2)) {
-            if (isEmpty(behindEnemy3)) {
-                enemyPos.entity = Entity.None;
-                behindEnemy3.entity = Entity.Enemy; 
-            } else {
-                enemyPos.entity = Entity.None;
-                behindEnemy2.entity = Entity.Enemy;
+    } else if (isAlignedY) {
+        if (directionX < 0) {
+            for (let i = 0; i < action.power; i++) {
+                if (playerPos.x - (i + 1) >= 0) {
+                    behindPlayer.push(board[playerPos.x - (i + 1)][playerPos.y]);
+                    behindPlayerPosition.push({x:playerPos.x - (i + 1),y:playerPos.y});
+                }
+            }   
+            console.log("Push player to the top");
+        } else {
+             for (let i = 0; i < action.power; i++) {
+                if (playerPos.x + (i + 1) < board.length) {
+                    behindPlayer.push(board[playerPos.x + (i + 1)][playerPos.y]);
+                    behindPlayerPosition.push({x:playerPos.x + (i + 1),y:playerPos.y});
+                }
             }  
-        } else {
-            enemyPos.entity = Entity.None;
-            behindEnemy.entity = Entity.Enemy;
-        }      
+            console.log("Push player to the bottom");
+        }
     }
-    updateBoard(board, playerHtml);
-} 
+
+    console.log(behindPlayer);
+    console.log(behindPlayerPosition);
+
+    let playerNewPos = board[playerPos.x][playerPos.y];
+
+    for (let i = 0; i < behindPlayer.length; i++) {
+        if (isEmpty(behindPlayer[i])) {
+           playerNewPos.entity = Entity.None;
+           playerNewPos = behindPlayer[i];
+           behindPlayer[i].entity = Entity.Player;
+           playerPos = behindPlayerPosition[i]
+        } else {
+            updateBoard(board, playerHtml);
+            return playerPos;
+        }
+    }
+    updateBoard(board,playerHtml);
+    return playerPos;
+}

@@ -2,259 +2,709 @@
     "levels": [
         {
             "id": 1,
-            "name": "MAP 1",
-            "pm": 5,
-            "spells": [1,2,3,4],
-            "board":  [
+            "name": "Level 1",
+            "pm": 3,
+            "spells": [2],
+            "board":[      
                 [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
                 ],
                 [
-                    {"type": "wall", "entity": "none"},
                     {"type": "empty", "entity": "player"},
                     {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
                     {"type": "empty", "entity": "enemy"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
                     {"type": "goal", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
+                    {"type": "empty", "entity": "none"}
                 ],
                 [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
                 ]
             ]
         },
         {
             "id": 2,
-            "name": "MAP 2",
-            "pm": 4,
-            "spells": [1,2,3,4,5,6],
-            "board": [
+            "name": "Level 2",
+            "pm": 2,
+            "spells": [14],
+            "board":  [
+                
                 [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
                 ],
                 [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "goal", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
                     {"type": "empty", "entity": "enemy"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "enemy"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
                     {"type": "empty", "entity": "player"},
-                    {"type": "wall", "entity": "none"}
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
                 ],
                 [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
                 ]
             ]
         },
         {
             "id": 3,
-            "name": "MAP 3",
-            "pm": 3,
-            "spells": [1,2,3,4,5,6],
-            "board": [
+            "name": "Level 3",
+            "pm": 12,
+            "spells": [1,3],
+            "board":  [
+                
                 [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
                     {"type": "empty", "entity": "player"},
-                    {"type": "empty", "entity": "enemy"},
                     {"type": "empty", "entity": "none"},
                     {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
                     {"type": "empty", "entity": "none"},
                     {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
                 ],
                 [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "enemy"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "enemy"},
                     {"type": "empty", "entity": "none"},
                     {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
                 ],
                 [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "enemy"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "enemy"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "empty", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
-                ],
-                [
-                    {"type": "wall", "entity": "none"},
                     {"type": "empty", "entity": "none"},
                     {"type": "empty", "entity": "none"},
                     {"type": "empty", "entity": "enemy"},
-                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
                     {"type": "empty", "entity": "none"},
                     {"type": "empty", "entity": "none"},
-                    {"type": "goal", "entity": "none"},
-                    {"type": "wall", "entity": "none"}
+                    {"type": "empty", "entity": "none"}
                 ],
                 [
                     {"type": "wall", "entity": "none"},
                     {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
-                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
                     {"type": "wall", "entity": "none"},
                     {"type": "wall", "entity": "none"},
                     {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
                 ]
-            ]         
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Level 4",
+            "pm": 12,
+            "spells": [1,2,3],
+            "board":  [
+                
+                [
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
+                ]
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Level 5",
+            "pm": 11,
+            "spells": [1,2,3,13],
+            "board":  [
+                
+                [
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
+                ]
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Level 6",
+            "pm": 11,
+            "spells": [1,2,3,15],
+            "board":  [
+                
+                [
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
+                ]
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Level 7",
+            "pm": 8,
+            "spells": [1,2,3,13,14,15],
+            "board":  [
+                
+                [
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "wall", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
+                ]
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Level 8",
+            "pm": 7,
+            "spells": [8],
+            "board":  [
+                
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "goal", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ]
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Level 9",
+            "pm": 4,
+            "spells": [18],
+            "board":  [
+                
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ]
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Level 10",
+            "pm": 7,
+            "spells": [17,18],
+            "board":  [
+                
+                [
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
+                ]
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Level 11",
+            "pm": 7,
+            "spells": [17,18],
+            "board":  [
+                
+                [
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "wall", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
+                ]
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Level 15",
+            "pm": 5,
+            "spells": [1,4,9,14,20],
+            "board":  [
+                
+                [
+                    {"type": "empty", "entity": "player"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "enemy"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"}
+                ],
+                [
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "empty", "entity": "none"},
+                    {"type": "goal", "entity": "none"}
+                ]
+            ]
         }
+          
     ],
     "spells": [
         {
@@ -262,6 +712,7 @@
             "name": "Light Breeze",
             "description":"Pushes enemy back 1 tile.",
             "range": 3,
+            "power": 1,
             "aligned": true,
             "entity": "enemy"
         },
@@ -270,6 +721,7 @@
             "name": "Strong Wind",
             "description":"Pushes enemy back 2 tiles.",
             "range": 2,
+            "power": 2,
             "aligned": true,
             "entity": "enemy"
         },
@@ -278,13 +730,14 @@
             "name": "Hurricane",
             "description":"Pushes enemy back 3 tiles.",
             "range": 1,
+            "power": 3,
             "aligned": true,
             "entity": "enemy"
         },
         {
             "id": 4,
             "name": "Hop",
-            "description":"Teleports you to 1 tile away.",
+            "description":"Teleports the player to 1 tile away.",
             "range": 1,
             "aligned": false,
             "entity": "none"
@@ -292,7 +745,7 @@
         {
             "id": 5,
             "name": "Leap",
-            "description":"Teleports you to 3 tiles away.",
+            "description":"Teleports the player to 3 tiles away.",
             "range": 3,
             "aligned": false,
             "entity": "none"
@@ -300,58 +753,139 @@
         {
             "id": 6,
             "name": "Fly",
-            "description":"Teleports you to 5 tiles away.",
+            "description":"Teleports the player to 5 tiles away.",
             "range": 5,
             "aligned": false,
             "entity": "none"
         },
         {
             "id": 7,
-            "name": "TBD",
-            "description":"TBD",
-            "range": 3,
+            "name": "Wave",
+            "description":"Pulls enemy 1 tile towards the player.",
+            "range": 4,
+            "power": 1,
             "aligned": true,
             "entity": "enemy"
         },
         {
             "id": 8,
-            "name": "TBD",
-            "description":"TBD",
-            "range": 2,
+            "name": "Torrent",
+            "description":"Pulls enemy 2 tiles towards the player.",
+            "range": 4,
+            "power": 2,
             "aligned": true,
             "entity": "enemy"
         },
         {
             "id": 9,
-            "name": "TBD",
-            "description":"TBD",
-            "range": 1,
+            "name": "Tsunami",
+            "description":"Pulls enemy 3 tiles towards the player.",
+            "range": 4,
+            "power": 3,
             "aligned": true,
             "entity": "enemy"
         },
         {
             "id": 10,
-            "name": "TBD",
-            "description":"TBD",
+            "name": "Tectonic Breach",
+            "description":"Teleports the enemy symmetrically to the player.",
             "range": 1,
-            "aligned": false,
-            "entity": "none"
+            "aligned": true,
+            "entity": "enemy"
         },
         {
             "id": 11,
-            "name": "TBD",
-            "description":"TBD",
-            "range": 3,
+            "name": "Sandworm",
+            "description":"Teleports the enemy symmetrically to the player.",
+            "range": 2,
             "aligned": false,
-            "entity": "none"
+            "entity": "enemy"
         },
         {
             "id": 12,
-            "name": "TBD",
-            "description":"",
+            "name": "Earthquake",
+            "description":"Teleports the enemy symmetrically to the player.",
+            "range": 3,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 13,
+            "name": "Zephyr",
+            "description":"Pushes the player 1 tile away from the enemy.",
+            "range": 3,
+            "power": 1,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 14,
+            "name": "Gale",
+            "description":"Pushes the player 2 tiles away from the enemy.",
+            "range": 2,
+            "power": 2,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 15,
+            "name": "Tempest",
+            "description":"Pushes the player 3 tiles away from the enemy.",
+            "range": 1,
+            "power": 3,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 16,
+            "name": "Splash",
+            "description":"Pulls the player 1 tile towards the enemy.",
+            "range": 4,
+            "power": 1,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 17,
+            "name": "Rain",
+            "description":"Pulls the player 2 tiles towards the enemy.",
+            "range": 4,
+            "power": 2,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 18,
+            "name": "Waterfall",
+            "description":"Pulls the player 3 tiles towards the enemy.",
+            "range": 4,
+            "power": 3,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 19,
+            "name": "Landslide",
+            "description":"Teleports the player symmetrically to the enemy.",
+            "range": 1,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 20,
+            "name": "Collapse",
+            "description":"Teleports the player symmetrically to the enemy.",
+            "range": 2,
+            "aligned": true,
+            "entity": "enemy"
+        },
+        {
+            "id": 21,
+            "name": "Seism",
+            "description":"Teleports the player symmetrically to the enemy.",
             "range": 3,
             "aligned": false,
-            "entity": "none"
+            "entity": "enemy"
         }
 
     ]

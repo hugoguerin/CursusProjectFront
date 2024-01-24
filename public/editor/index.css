@@ -1,3 +1,8 @@
+@font-face {
+    font-family: alagard;
+    src: url(../assets/fonts/alagard.ttf) format('truetype');
+}
+
 body{
     height: 95vh;
     background-color: #171d20;

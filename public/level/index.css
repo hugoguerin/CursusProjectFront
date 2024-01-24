@@ -1,3 +1,7 @@
+@font-face {
+    font-family: alagard;
+    src: url(../assets/fonts/alagard.ttf) format('truetype');
+}
 
 #board{
     display: flex;
@@ -167,7 +171,6 @@ body{
 }
 
 #spellDescription{
-    /* border-radius: 5%; */
     border: 1px solid #f4f3ee;
     display: flex;
     justify-content: center;
